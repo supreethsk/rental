@@ -58,7 +58,7 @@
              <td>$customer_name[$i]</td>
              <td>$payment_type[$i]</td>
              <td>$pickup_time[$i]</td>
-             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>
+             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_$i'>
              Assignvendor
            </button></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal$i'>
@@ -100,7 +100,7 @@
        
 
  echo "
-    <div class='modal' id='myModal'>
+    <div class='modal' id='myModal_$i'>
     <div class='modal-dialog'>
       <div class='modal-content'>
       
