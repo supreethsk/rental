@@ -42,8 +42,8 @@ include 'config_db.php';
       <div class="sidebar-heading"><img style="width: 200px;" src="logo.png"></div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action bg-light" id="dash">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="vendor">Vendor List</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light" id="vehicle">Vehicle List</a>
+        <a href="vendor.php" class="list-group-item list-group-item-action bg-light" id="vendor">Vendor List</a>
+        <a href="vehicle.php" class="list-group-item list-group-item-action bg-light" id="vehicle">Vehicle List</a>
         <a href="#" class="list-group-item list-group-item-action bg-light" id="customer">Customer List</a>
       </div>
     </div>
