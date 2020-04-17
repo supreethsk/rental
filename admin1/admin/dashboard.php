@@ -14,7 +14,7 @@
         $user_id[$i] = $row['user_id'];
         $payment_id[$i] = $row['payment_id'];
         $pickup_time[$i] = $row['pickup_time'];
-
+        $booking_id[$i]=$row['booking_id'];
        
         $vehicle_id[$i]=$row['vehicle_id'];
         $user_id[$i]=$row['user_id'];
@@ -58,7 +58,9 @@
              <td>$customer_name[$i]</td>
              <td>$payment_type[$i]</td>
              <td>$pickup_time[$i]</td>
-             <td>status</td>
+             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>
+             Assignvendor
+           </button></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal$i'>
              Open modal
            </button></td>
@@ -95,6 +97,41 @@
     </div>
   </div>
 ";
+       
+
+ echo "
+    <div class='modal' id='myModal'>
+    <div class='modal-dialog'>
+      <div class='modal-content'>
+      
+        <!-- Modal Header -->
+        <div class='modal-header'>
+          <h4 class='modal-title'> vendor list </h4>
+          <button type='button' class='close' data-dismiss='modal'>&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <center>
+        <div class='modal-body'>
+        <h3>$booking_id[$i];</h3>
+           <form action='vendorasign.php?id=$booking_id[$i]' method='post'>
+                
+              <input type='text' name='id'>
+              <input type='hidden' name='pname' value='$booking_id[$i]'>
+           </form>
+        </div>
+        </center>
+        <!-- Modal footer -->
+        <div class='modal-footer'>
+          <button type='button' class='btn btn-danger' data-dismiss='modal'>Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+";
+      
+
         }
 
     echo "</table>";
