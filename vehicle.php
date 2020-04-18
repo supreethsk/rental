@@ -67,10 +67,27 @@ echo $_POST['pick_up_at'];*/
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <title></title>
+    <style>
+        .flyout{
+            background-color: #ecf7e8;
+    border: 1px solid #57a143;
+    padding: 10px;
+    z-index: 999999;
+    border-radius: 5px;
+        }
+        .flyout1{
+            background-color: #f9e9e9;
+    border: 1px solid #ec2020;
+    padding: 10px;
+    z-index: 999999;
+    border-radius: 5px;
+    min-width:292%;
+        }
+        </style>
  </head>
  <body>
  
@@ -140,42 +157,49 @@ echo $pieces[0];
    </div>
 
 </div>
-<?php
-$sql =" SELECT * FROM vehicle where registercity='$from'";
- 
- $query = mysqli_query($db,$sql);
- while ($row = $query->fetch_assoc())
- {
-    $car_name=$row['vehicle_name'];
-    $car_price=$row['vehicle_price'];
-    ?>
-    <div class="container">
-<div class="form_container1 mt-3">
-    <div class="row m-0">
-        <div class="col-4 p-0 text-center">
-            <div class="row">
-                <img src="bg_1.jpg" class="mr-4" style="width: 30%" alt="car">
-                <span class="fw-600 pt-4"><?php echo $car_name; ?></span>
+
+<div class="container">
+<div class="row m-0">
+    <div class="col-6 p-0">
+        <div class="row m-0 p-3">
+            <div class="col-sm-4">
+                <img src="logo.png" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
+                <span class="text-primary text-uppercase font-weight-bold pt-3">TATA INDIGO</span><br>
+                <span class=" font-13">Sedan | AC | 4 Seats</span>
+    
             </div>
-        </div>
-        <div class="col-2 p-0 pt-4 text-center" style="background-color: #fafafa;">
-            <span class="fw-600 ">Includes 3393</span>
-        </div>
-        <div class="col-3 p-0 pt-2 text-center"style="background-color: #f3f3f3;" >
-            <div class="row m-0">
-                <div class="col p-0 text-center">
-                    <span class="save">save ₹800</span>
+            <div class="col-8">
+                <div class="row m-0">
+                    <div class="col-sm-6 p-0">
+                        <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
+                        <div href="#" class="menu" style="position:relative; color: #57a143;">Advanced</div>
+                        <p class="flyout" style="position:absolute;display:none;"><span><strong class=" text-success">Advance :</strong><br>
+                If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
+</span></p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span>5381</span></strong>
+                        <div class="menu1" style="position:relative;color: #ec2020">Fair details</div> 
+                        <p class="flyout1" style="position:absolute;display:none; "><strong class="text-red">Fare Breakup :</strong><br />
+                        Approx. Roundtrip distance : 280 Kms.<br />
+                        Minimum charged distance :  &nbsp225 Kms / Day <br />
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>=   Rs. 4387.5 /-</span>           
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
+                        <br />   <em><b class='blue'>Extra Charges :</b> </em> <b>If you will use car/cab more than 450 Kms , extra charges as follows: </b><br />  After  <del class='text-danger' style='display:none;'>500</del>&nbsp450  Kms :<br />+   <label class='WebRupee'>Rs</label>&nbsp;<del class='text-danger' style='display:none;'>9.25</del>&nbsp9.75 per km charges<br /> <br /> <em><b class='blue'>CCR Transparency :</b> </em>1. One day means one calendar day (12 midnight to 12 midnight).<br />2. Kilometers and Hours will be calculated from garage to garage.<br />3. Toll, Parking, State Border Charges etc. not include in the above cost, you have to pay extra as applicable. <br />4.AC will be switched off in hilly areas.<br>5.Driver would take care of his food and stay. <br>Note: If driver drive vehicle between 09:00 PM to 06:00 AM, Night charges Rs.250/- will be applicable.</span></a>
+  
+                    </p>
+                    </div>
                 </div>
-                <div class="col p-0 text-center" >
-                <div style="display: grid;">    
-                <span class="price"><?php echo "₹";echo $car_price; ?></span>
-                    <span>include GST</span>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-3 p-0 pt-2 text-center">
-        <a href="customer_details.php?id=<?php echo $row['vehicle_id'];?>
+                <div class="row m-0">
+                    <div class="col-sm-6 p-0 mt-4">
+                        <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
+                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75</strong><br>
+                        
+                        <strong>Per KM</strong>
+                    </div>
+                    <div class="col-sm-6 p-0 mt-auto">
+                        <a href="customer_details.php?id=<?php echo $row['vehicle_id'];?>
                                     &from=<?php echo $from;?>
                                     &to=<?php echo $to;?>
                                     &pick_up=<?php echo $pick_up;?>
@@ -183,12 +207,68 @@ $sql =" SELECT * FROM vehicle where registercity='$from'";
                                     &pick_up_at=<?php echo $pick_up_at;?>
                                     &book=<?php echo $book;?>
                                     ">   
-        <button class="buttonselect">BOOK NOW</button> </a>
+                                    <button class="buttonselect">BOOK NOW</button> </a>
+                    </div>
+                </div>
+            </div>
+            </div>
         </div>
-    </div>
-    </div>
+        <div class="col-6 p-0">
+        <div class="row m-0 p-3">
+            <div class="col-sm-4">
+                <img src="logo.png" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
+                <span class="text-primary text-uppercase font-weight-bold pt-3">TATA INDIGO</span><br>
+                <span class=" font-13">Sedan | AC | 4 Seats</span>
+    
+            </div>
+            <div class="col-8">
+                <div class="row m-0">
+                    <div class="col-sm-6 p-0">
+                        <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
+                        <div href="#" class="menu" style="position:relative; color: #57a143;">Advanced</div>
+                        <p class="flyout" style="position:absolute;display:none;"><span><strong class=" text-success">Advance :</strong><br>
+                If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
+</span></p>
+                    </div>
+                    <div class="col-6 p-0">
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span>5381</span></strong>
+                        <div class="menu1" style="position:relative;color: #ec2020">Fair details</div> 
+                        <p class="flyout1" style="position:absolute;display:none; "><strong class="text-red">Fare Breakup :</strong><br />
+                        Approx. Roundtrip distance : 280 Kms.<br />
+                        Minimum charged distance :  &nbsp225 Kms / Day <br />
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>=   Rs. 4387.5 /-</span>           
+                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
+                        <br />   <em><b class='blue'>Extra Charges :</b> </em> <b>If you will use car/cab more than 450 Kms , extra charges as follows: </b><br />  After  <del class='text-danger' style='display:none;'>500</del>&nbsp450  Kms :<br />+   <label class='WebRupee'>Rs</label>&nbsp;<del class='text-danger' style='display:none;'>9.25</del>&nbsp9.75 per km charges<br /> <br /> <em><b class='blue'>CCR Transparency :</b> </em>1. One day means one calendar day (12 midnight to 12 midnight).<br />2. Kilometers and Hours will be calculated from garage to garage.<br />3. Toll, Parking, State Border Charges etc. not include in the above cost, you have to pay extra as applicable. <br />4.AC will be switched off in hilly areas.<br>5.Driver would take care of his food and stay. <br>Note: If driver drive vehicle between 09:00 PM to 06:00 AM, Night charges Rs.250/- will be applicable.</span></a>
+  
+                    </p>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-sm-6 p-0 mt-4">
+                        <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
+                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75</strong><br>
+                        
+                        <strong>Per KM</strong>
+                    </div>
+                    <div class="col-sm-6 p-0 mt-auto">
+                        <a href="customer_details.php?id=<?php echo $row['vehicle_id'];?>
+                                    &from=<?php echo $from;?>
+                                    &to=<?php echo $to;?>
+                                    &pick_up=<?php echo $pick_up;?>
+                                    &return=<?php echo $return;?>
+                                    &pick_up_at=<?php echo $pick_up_at;?>
+                                    &book=<?php echo $book;?>
+                                    ">   
+                                    <button class="buttonselect">BOOK NOW</button> </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
 </div>
-<?php } ?>
+</div>
+
  <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -276,6 +356,13 @@ $sql =" SELECT * FROM vehicle where registercity='$from'";
         </div>
       </div>
 
+
+
+
+
+
+
+
       <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> 
         </script> 
@@ -362,10 +449,22 @@ $sql =" SELECT * FROM vehicle where registercity='$from'";
        $(".dropchange").css("width",'100%');
       }); 
 
-
+  });
 
     });
     </script>
+    <script>
+       $(".menu").hover(function(){
+    $('.flyout').show();
+},function(){
+    $('.flyout').hide();
+});
+$(".menu1").hover(function(){
+    $('.flyout1').show();
+},function(){
+    $('.flyout1').hide();
+});
+        </script>
     <script>
      var searchInput = 'search_input';
 

@@ -256,3 +256,31 @@
     background-position: cover;
 
 }
+.advanceDetail a:hover {
+    color: #000;
+    cursor: default;
+    position: relative;
+}
+.advanceDetail a {
+    color: #57a143;
+    line-height: 25px;
+    text-decoration: none;
+}
+.tooltip {
+	display:none;
+	position:absolute;
+	border:1px solid #333;
+	background-color:#161616;
+	border-radius:5px;
+	padding:10px;
+	color:#fff;
+	font-size:12px Arial;
+}
+.flyout
+{
+    background-color: #22a9d7;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 999999;
+    border-radius: 5px;
+}
