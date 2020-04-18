@@ -14,7 +14,124 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDI-vSjLZFp1EKPOf4yrA61Kvla82jtuQU"></script>
-    
+   <style>
+.container{
+  text-align: center;
+}
+.btn11{
+  border: 1px solid #3498db;
+  background: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-family: "montserrat";
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+}
+.btn1,.btn2{
+  color: #3498db;
+}
+.btn3,.btn4{
+  color: #fff;
+}
+.btn1:hover,.btn2:hover{
+  color: black;
+}
+.btn3:hover,.btn4:hover{
+  color: #3498db;
+}
+.btn11::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #fc983c ;
+  z-index: -1;
+  transition: 0.8s;
+}
+.btn1::before,.btn3::before{
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+.btn2::before,.btn4::before{
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+.btn3::before,.btn4::before{
+  height: 180%;
+}
+.btn1:hover::before,.btn2:hover::before{
+  height: 180%;
+}
+.btn3:hover::before,.btn4:hover::before{
+  height: 0%;
+}
+       .card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+  padding:10px;
+}
+
+.card .card_title p{
+    background-color: black;
+  opacity: 0.8;
+  border-radius: 61px;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+  
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: #fc983c;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+   </style> 
 </head>
 <body>
     <section id="header">
@@ -178,57 +295,6 @@
     
     </section>
 
-    <div class="bg">
-        <div class="LightBlueBg mt-5">
-       
-        <div class="container">
-            <div class="row">
-            <div class="col-lg-4 col-sm-4 text-center border-blue-left py-2">
-            <span><i class="fa fa-building-o fa-2x text-white"></i></span><br>
-            <span>11</span><br> 
-            <span>COUNTRIES</span>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center border-blue-left py-2">
-                <span><i class="fa fa-user fa-2x text-white"></i></span><span>200</span><br> 
-            <span>CITIES</span>
-            </div>
-            <div class="col-lg-4 col-sm-4 text-center border-blue-left border-blue-right py-2">
-                <span><i class="fa fa-smile-o fa-2x text-white"></i></span>
-                <span>2000</span><br> 
-            <span>HAPPY CUSTOMERS</span>
-            </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    
-    <div class="row m-5">
-        <div class="col p-0 pl-1 pr-1" style="text-align: center;">
-            <img src="images.png" alt="bill">
-            <div class="bor mt-2"><h2 class="yellow">GST AND Transparent bills</h2></div>
-        </div>
-        <div class="col p-0 pl-1 pr-1" style="text-align: center">
-        <img src="driver.png" class="w-53" alt="bill">
-        <div class="bor mt-2"><h2 class="yellow">Professional drivers</h2></div>
-        </div>
-        <div class="col p-0 pl-1 pr-1" style="text-align: center">
-        <img src="roadsafty.png" class="w-53" alt="bill">
-        <div class="bor mt-2"><h2 class="yellow" style="padding: 0 30px;">Defensive drivers</h2></div>
-        </div>
-        <div class="col p-0 pl-1 pr-1" style="text-align: center">
-        <img src="reliable.png" class="w-53" alt="bill">
-        <div class="bor mt-2"><h2 class="yellow" style="padding: 0 30px;">Reliable services</h2></div>
-        </div>
-        <div class="col p-0 pl-1 pr-1" style="text-align: center">
-        <img src="tour_related.png" alt="bill">
-        <div class="bor mt-2"><h2 class="yellow">Other Travel service</h2></div>
-        </div>
-        <div class="col p-0 pl-1 pr-1" style="text-align: center">
-        <img src="online.png" class="w-53" alt="bill">
-        <div class="bor mt-2"><h2 class="yellow">Online and Tele booking</h2></div>
-        </div>
-    </div>
-
     <div class="row m-5" style="border-bottom: 1px solid #FCC938;">
         <div class="col-4 pl-5">
            <h3 class="yellow"><b><i>11 COUNTRIES</i></b></h3> 
@@ -241,6 +307,108 @@
         </div>
         <hr>
     </div>
+    
+    <div class="row m-0 justify-content-center">
+        <h2 style="border-bottom:2px solid black">FEATURES</h2>
+    </div>
+
+    <div class="row m-5">
+        <div class="col p-0 pl-1 pr-1" style="text-align: center;">
+            <div class="card 1">
+                <div class="card_image"> <img src="images.png" /> </div>
+                <div class="card_title title-white">
+                    <p>GST AND Transparent bills</p>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 pl-1 pr-1" style="text-align: center">
+            <div class="card 1">
+                <div class="card_image"> <img src="driver.png" /> </div>
+                <div class="card_title title-white">
+                    <p>Professional drivers</p>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 pl-1 pr-1" style="text-align: center">
+            <div class="card 1">
+                <div class="card_image"> <img src="roadsafty.png" /> </div>
+                <div class="card_title title-white">
+                    <p>Defensive drivers</p>
+                </div>
+            </div>
+        </div>
+</div>
+<div class="row m-5">
+        <div class="col p-0 pl-1 pr-1" style="text-align: center">
+        <div class="card 1">
+                <div class="card_image"> <img src="reliable.png" /> </div>
+                <div class="card_title title-white">
+                    <p>Reliable services</p>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 pl-1 pr-1" style="text-align: center">
+        <div class="card 1">
+                <div class="card_image"> <img src="tour_related.png" /> </div>
+                <div class="card_title title-white">
+                    <p>Other Travel service</p>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 pl-1 pr-1" style="text-align: center">
+        <div class="card 1">
+                <div class="card_image"> <img style="width:inherit;padding: 11px;" src="online.png" /> </div>
+                <div class="card_title title-white">
+                    <p>Online and Tele booking</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" style="height:440px;" src="https://www.meru.in/assets/images/happy.jpg" alt="First slide">
+      <center class="mb-5">
+      <h3>12 million satisfied customers</h3>
+      <p>	Serving millions of customers for more than 10 years.</p>
+</center>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="height:440px;" src="https://www.meru.in/assets/images/experts-hands-on-wheels.jpg" alt="Second slide">
+      <center class="mb-5">
+      <h3>Expert hands on wheel!</h3>
+      <p>Professional drivers at your service.</p>
+</center>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" style="height:440px;" src="https://www.meru.in/assets/images/book-the-way.jpg" alt="Third slide">
+      <center class="mb-5">
+      <h3>Book the way you like!</h3>
+      <p>5 different ways to book your cab.</p>
+      <p class="service_modes">App &nbsp;  | &nbsp;  Website  &nbsp; | &nbsp;  Call Center  &nbsp; | &nbsp;  Google search &nbsp;  |  &nbsp; whatsapp Chat</p>
+</center>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="row m-0 justify-content-center">
+        <h2 style="border-bottom:2px solid black">ABOUT US</h2>
+    </div>
+   
     
     <div class="row m-5" >
         <div class="col-1"></div>
@@ -270,16 +438,17 @@ In fact, we see no other way to travel than by way of airplanes. But if you have
 then we will show you why travel by road is the new way of travel
         </p>
     </div>
-    <div class="row m-0" >
-        <h4 class="yellow ml-5" style="border-bottom: 1px solid #FCC938;"><b>SERVICES</b></h4>
+    <div class="row m-0 justify-content-center">
+        <h2 style="border-bottom:2px solid black">SERVICES</h2>
     </div>
-    <ul class="blue ml-5" style="font-size: 20px">
-                <li>Local Car Rentals</li>
-                <li>Outstation Taxi</li>
-                <li>One way Cabs</li>
-                <li>Corporate Car rentals</li>
-                <li>Airport Taxi</li> 
-            </ul>
+    
+<div class="container">
+  <button class="btn11 btn1">Local Car Rentals</button>
+  <button class="btn11 btn2">Outstation Taxi</button>
+  <button class="btn11 btn1">One way Cabs</button>
+  <button class="btn11 btn2">Corporate Car rentals</button>
+  <button class="btn11 btn1">Airport Taxi</button>
+</div>
     <div style="text-align: center" class="mb-5">
     <span class="blinking">Now travel begins by Calling AYAW !!!!</span>
     </div>
