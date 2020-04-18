@@ -160,12 +160,27 @@ echo $pieces[0];
 </div>
 
 <div class="container">
+    
 <div class="row m-0">
+    <?php
+    $i=0;
+$sql =" SELECT * FROM vehicle";
+ 
+ $query = mysqli_query($db,$sql);
+ while ($row = $query->fetch_assoc())
+ {
+    
+    $car_name=$row['vehicle_name'];
+    $car_price=$row['vehicle_price'];
+    $car_image=$row['vehicle_image'];
+    $i++;
+    
+    ?>
     <div class="col-6 p-0">
         <div class="row m-0 p-3">
             <div class="col-sm-4">
-                <img src="logo.png" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
-                <span class="text-primary text-uppercase font-weight-bold pt-3">TATA INDIGO</span><br>
+                <img src="<?php echo $car_image;?>" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
+                <span class="text-primary text-uppercase font-weight-bold pt-3"><?php echo $car_name; ?></span><br>
                 <span class=" font-13">Sedan | AC | 4 Seats</span>
     
             </div>
@@ -179,7 +194,7 @@ echo $pieces[0];
 </span></p>
                     </div>
                     <div class="col-6 p-0">
-                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span>5381</span></strong>
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php echo $car_price; ?></span></strong>
                         <div class="menu1" style="position:relative;color: #ec2020">Fair details</div> 
                         <p class="flyout1" style="position:absolute;display:none; "><strong class="text-red">Fare Breakup :</strong><br />
                         Approx. Roundtrip distance : 280 Kms.<br />
@@ -214,61 +229,8 @@ echo $pieces[0];
             </div>
             </div>
         </div>
-        <div class="col-6 p-0">
-        <div class="row m-0 p-3">
-            <div class="col-sm-4">
-                <img src="logo.png" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
-                <span class="text-primary text-uppercase font-weight-bold pt-3">TATA INDIGO</span><br>
-                <span class=" font-13">Sedan | AC | 4 Seats</span>
-    
-            </div>
-            <div class="col-8">
-                <div class="row m-0">
-                    <div class="col-sm-6 p-0">
-                        <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
-                        <div href="#" class="menu" style="position:relative; color: #57a143;">Advanced</div>
-                        <p class="flyout" style="position:absolute;display:none;"><span><strong class=" text-success">Advance :</strong><br>
-                If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
-</span></p>
-                    </div>
-                    <div class="col-6 p-0">
-                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span>5381</span></strong>
-                        <div class="menu1" style="position:relative;color: #ec2020">Fair details</div> 
-                        <p class="flyout1" style="position:absolute;display:none; "><strong class="text-red">Fare Breakup :</strong><br />
-                        Approx. Roundtrip distance : 280 Kms.<br />
-                        Minimum charged distance :  &nbsp225 Kms / Day <br />
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>=   Rs. 4387.5 /-</span>           
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
-                        <br />   <em><b class='blue'>Extra Charges :</b> </em> <b>If you will use car/cab more than 450 Kms , extra charges as follows: </b><br />  After  <del class='text-danger' style='display:none;'>500</del>&nbsp450  Kms :<br />+   <label class='WebRupee'>Rs</label>&nbsp;<del class='text-danger' style='display:none;'>9.25</del>&nbsp9.75 per km charges<br /> <br /> <em><b class='blue'>CCR Transparency :</b> </em>1. One day means one calendar day (12 midnight to 12 midnight).<br />2. Kilometers and Hours will be calculated from garage to garage.<br />3. Toll, Parking, State Border Charges etc. not include in the above cost, you have to pay extra as applicable. <br />4.AC will be switched off in hilly areas.<br>5.Driver would take care of his food and stay. <br>Note: If driver drive vehicle between 09:00 PM to 06:00 AM, Night charges Rs.250/- will be applicable.</span></a>
-  
-                    </p>
-                    </div>
-                </div>
-                <div class="row m-0">
-                    <div class="col-sm-6 p-0 mt-4">
-                        <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
-                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75</strong><br>
-                        
-                        <strong>Per KM</strong>
-                    </div>
-                    <div class="col-sm-6 p-0 mt-auto">
-                        <a href="customer_details.php?id=<?php echo $row['vehicle_id'];?>
-                                    &from=<?php echo $from;?>
-                                    &to=<?php echo $to;?>
-                                    &pick_up=<?php echo $pick_up;?>
-                                    &return=<?php echo $return;?>
-                                    &pick_up_at=<?php echo $pick_up_at;?>
-                                    &book=<?php echo $book;?>
-                                    ">   
-                                    <button class="buttonselect">BOOK NOW</button> </a>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-</div>
-</div>
+    <?php } ?>
+        
 
  <div class="modal" id="myModal">
         <div class="modal-dialog">
