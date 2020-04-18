@@ -125,7 +125,7 @@ echo $pieces[0];
             <span><?php echo $pick_up ?></span>
         </div>
         <div style="display: grid" class="mr-5 ml-5">
-            <span class="fw-600">pickup</span>
+            <span class="fw-600">return</span>
             <span><?php echo $return ?></span>
         </div>
         <div style="display: grid" class="mr-5 ml-5">

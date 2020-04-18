@@ -111,18 +111,18 @@
                     <label class="label form_label">Drop-off location</label>
                     <input type="text" name="to" class="form-control" id="search_input2" placeholder="City, Airport, Station, etc">
                 </div>
-                <div class="d-flex b">
-                <div class="form-group mr-2 b">
+                <div class="d-flex ">
+                <div class="form-group mr-2 ">
                     <label class="label form_label ">PICK-UP DATE</label>
                     <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker1">
                 </div>
-                <div class="form-group ml-2 b drop">
+                <div class="form-group ml-2  drop">
                     <label class="label form_label ">DROP-OFF DATE</label>
                     <input type="text" name="return" autocomplete="off" class="form-control" placeholder="Date" id="my_date_picker2">
                 </div>
                 </div>
                 <div>
-                <div class="form-group b">
+                <div class="form-group ">
                     <label class="label form_label">PICK-UP TIME</label>
                     <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
                 </div>
@@ -134,14 +134,6 @@
                     <label class="label form_label">Drop-off location</label>
                     <input type="text"  name="field_name[]" class="form-control" id="search_input" placeholder="City, Airport, Station, etc">
                     <a href="javascript:void(0);" class="add_button" title="Add field"><img src="https://img.icons8.com/material-outlined/24/000000/plus.png"/></a>
-                </div> 
-                <div class="form-group mr-2 ">
-                    <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker3">
-                </div>
-                <div class="form-group">
-                    <label class="label form_label">PICK-UP TIME</label>
-                    <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
                 </div> 
                 </div> 
                 <div style="text-align: center;">
