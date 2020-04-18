@@ -86,6 +86,7 @@ echo $_POST['pick_up_at'];*/
     z-index: 999999;
     border-radius: 5px;
     min-width:292%;
+    left: -306px;
         }
         </style>
  </head>
