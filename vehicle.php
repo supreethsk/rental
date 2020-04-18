@@ -71,24 +71,7 @@ echo $_POST['pick_up_at'];*/
     <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <title></title>
-    <style>
-        .flyout{
-            background-color: #ecf7e8;
-    border: 1px solid #57a143;
-    padding: 10px;
-    z-index: 999999;
-    border-radius: 5px;
-        }
-        .flyout1{
-            background-color: #f9e9e9;
-    border: 1px solid #ec2020;
-    padding: 10px;
-    z-index: 999999;
-    border-radius: 5px;
-    min-width:292%;
-    left: -306px;
-        }
-        </style>
+    
  </head>
  <body>
  
@@ -188,15 +171,15 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0">
                         <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
-                        <div href="#" class="menu" style="position:relative; color: #57a143;">Advanced</div>
-                        <p class="flyout" style="position:absolute;display:none;"><span><strong class=" text-success">Advance :</strong><br>
+                        <div href="#" id="menu<?php echo $i?>" style="position:relative; color: #57a143;">Advanced</div>
+                        <p class="flyout<?php echo $i?>" style="position:absolute;display:none;background-color: #ecf7e8;border: 1px solid #57a143;padding: 10px;z-index: 999999;border-radius: 5px;width:266%;"><span><strong class=" text-success">Advance :</strong><br>
                 If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
 </span></p>
                     </div>
                     <div class="col-6 p-0">
                         <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php echo $car_price; ?></span></strong>
-                        <div class="menu1" style="position:relative;color: #ec2020">Fair details</div> 
-                        <p class="flyout1" style="position:absolute;display:none; "><strong class="text-red">Fare Breakup :</strong><br />
+                        <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Fair details</div> 
+                        <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
                         Approx. Roundtrip distance : 280 Kms.<br />
                         Minimum charged distance :  &nbsp225 Kms / Day <br />
                         <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
@@ -229,6 +212,18 @@ $sql =" SELECT * FROM vehicle";
             </div>
             </div>
         </div>
+        <script>
+       $("#menu<?php echo$i?>").hover(function(){
+    $('.flyout<?php echo$i?>').show();
+},function(){
+    $('.flyout<?php echo$i?>').hide();
+});
+$("#menu_<?php echo$i?>").hover(function(){
+    $('.flyout_<?php echo$i?>').show();
+},function(){
+    $('.flyout_<?php echo$i?>').hide();
+});
+        </script>
     <?php } ?>
         
 
@@ -416,18 +411,7 @@ $sql =" SELECT * FROM vehicle";
 
     });
     </script>
-    <script>
-       $(".menu").hover(function(){
-    $('.flyout').show();
-},function(){
-    $('.flyout').hide();
-});
-$(".menu1").hover(function(){
-    $('.flyout1').show();
-},function(){
-    $('.flyout1').hide();
-});
-        </script>
+   
     <script>
      var searchInput = 'search_input';
 
