@@ -61,8 +61,7 @@
                 
                 <td><?php echo $row1['car_price']; ?></td>
                 <td><?php echo $row1['car_seat']; ?></td>
-                <td><button>confirm</button></td> 
-                <td><button>pending</button></td>    
+                 <td><a href="mailer.php"><button>Request</button></a> </td>   
 
             </tr>
         <?php } }?>
