@@ -1,6 +1,7 @@
-
-
-
+<?php
+ $id=$_GET['id'];
+ 
+?>
 <style>
 ::-webkit-textarea-placeholder { /* Chrome */
   color: #C8C8C8;
@@ -78,7 +79,7 @@ div.userProfilePanel {
          <div class="form-group">
           
                    <label>Enter Recipient Name</label>
-                          <input type="text" class="form-control" name="To" >
+                          <input type="text" class="form-control" name="To" value="<?php echo $id;?>">
           </div>
                   <textarea class="tinymce form-control mt-3" name="tinymce" value="">
                 
