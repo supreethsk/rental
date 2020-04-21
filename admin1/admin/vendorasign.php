@@ -1,9 +1,9 @@
 <?php
 include "config_db.php";
- $vendor_id=$_POST['id'];
- $id=$_POST['pname'];
+ $id=$_GET['id'];
+ $booking_id=$_GET['bookingid'];
 
- $sql="UPDATE carbooking set vendor_id=$vendor_id where booking_id='$id' ";
+ $sql="UPDATE carbooking set vendor_id=$id where booking_id='$booking_id' ";
  $query=mysqli_query($db,$sql);
  if($query==true){
  	 echo "<script>

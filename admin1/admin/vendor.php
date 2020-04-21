@@ -1,7 +1,9 @@
 <?php
- include "config_db.php";?>
-  <table border="2" class="table">
-    <thead class="thead-dark">
+ include "config_db.php";
+
+ ?>
+  <table border="1" class="table">
+    <thead>
             <tr>
                 
                 <th>vendor Name</th>

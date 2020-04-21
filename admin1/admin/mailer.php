@@ -78,7 +78,7 @@ div.userProfilePanel {
           <form action="sent.php" method="POST">
          <div class="form-group">
           
-                   <label>Enter Recipient Name</label>
+                   <label>Recipient Name</label>
                           <input type="text" class="form-control" name="To" value="<?php echo $id;?>">
           </div>
                   <textarea class="tinymce form-control mt-3" name="tinymce" value="">

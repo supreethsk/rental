@@ -18,7 +18,7 @@ require 'PHPMailer/SMTP.php';
 </head>
 <body>
 <?php 
-$to=$_GET['id'];
+$to=$_GET['to'];
 
 $mail= new PHPMailer;
 $mail->isSMTP();
@@ -32,7 +32,7 @@ $mail->setFrom('pavitra@knobly.com', 'Aywa');
 $mail->addAddress($to);
 $mail->Subject = 'Aywa';
 $mail->isHTML(true);
-$mailContent ="heloo";
+$mailContent =$tinymce;
 $mail->Body = $mailContent;
 if(!$mail->send()){
     echo 'Message could not be sent.';

@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <?php
  include "config_db.php";
 
@@ -28,6 +32,7 @@
     $row2=mysqli_fetch_assoc($result2);
          $customer_name[$i]=$row2['customer_name'];
          $payment_type[$i]=$row2['payment_type'];
+         $email[$i]=$row2['cutomer_email'];
          $i++;
          
     }  
@@ -40,24 +45,24 @@
     echo '<table class="table">';
     echo "<thead><tr><th>Booking type</th><th>Source</th><th>Destination</th><th>Pick up date </th><th>Drop date</th><th>Vehicle Name</th><th>User name</th>
     <th>payment</th><th>Pick up time</th><th>Status</th><th>message</th></tr></thead>";
-
+    
     // Loop through the results from the database
     for ($i = 1; $i <=count($booking_type); $i++)
     {
     // Show entries
-        echo    
-            "
+      ?>
+        
             <tbody>
             <tr>
-            <td>$booking_type[$i]</td>
-            <td>$source[$i]</td>
-            <td>$destination[$i]</td>
-            <td>$pickup_date[$i]</td>
-             <td>$drop_date[$i]</td>
-             <td>$vehicle_name[$i]</td>
-             <td>$customer_name[$i]</td>
-             <td>$payment_type[$i]</td>
-             <td>$pickup_time[$i]</td>
+            <td><?php echo $booking_type[$i]; ?></td>
+            <td><?php echo $source[$i];?></td>
+            <td><?php echo $destination[$i];?></td>
+            <td><?php echo $pickup_date[$i];?></td>
+             <td><?php echo $drop_date[$i];?></td>
+             <td><?php echo $vehicle_name[$i];?></td>
+             <td><?php echo$customer_name[$i];?></td>
+             <td><?php echo $payment_type[$i];?></td>
+             <td><?php echo $pickup_time[$i]?></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_$i'>
              Assignvendor
            </button></td>
@@ -65,9 +70,9 @@
              Open modal
            </button></td>
             </tr>
-            </tbody>";
+            </tbody>
 
-    echo "
+   
     <div class='modal' id='myModal$i'>
     <div class='modal-dialog'>
       <div class='modal-content'>
@@ -81,9 +86,9 @@
         <!-- Modal body -->
         <center>
         <div class='modal-body'>
-        <span>Contact</span> <h3>$customer_name[$i]</h3> <div>using</div>
+        <span>Contact</span> <h3><?php echo $customer_name[$i];?></h3> <div>using</div>
 
-         <a href='#'><img class='icon' src='https://img.icons8.com/color/48/000000/gmail.png'/></a>
+         <a href='customermail.php?to= $email[$i]'><img class='icon' src='https://img.icons8.com/color/48/000000/gmail.png'/></a>
          or
          <a><img class='icon' src='https://img.icons8.com/color/48/000000/whatsapp.png'/></a>
         </div>
@@ -96,10 +101,10 @@
       </div>
     </div>
   </div>
-";
+
        
 
- echo "
+ 
     <div class='modal' id='myModal_$i'>
     <div class='modal-dialog'>
       <div class='modal-content'>
@@ -113,11 +118,25 @@
         <!-- Modal body -->
         <center>
         <div class='modal-body'>
-        <h3>$booking_id[$i];</h3>
-           <form action='vendorasign.php?id=$booking_id[$i]' method='post'>
+        <h3><?php echo $booking_id[$i];?></h3>
+           <form action='search.php' method='post'>
                 
-              <input type='text' name='id'>
-              <input type='hidden' name='pname' value='$booking_id[$i]'>
+                
+               <select name='vendorcity'>
+                <?php 
+                $sql1="select * from vendor";
+                 $query=mysqli_query($db,$sql1);
+                 while ($vendorrow=$query->fetch_assoc()) {
+                     $vendor_city=$vendorrow['vendor_city'];
+                  ?>  
+                 
+                <option value="<?php echo $vendor_city; ?>"><?php echo $vendor_city; ?></option>
+               <?php  }?>
+                
+              
+              </select>
+              <input type='hidden' name='pname' value='<?php echo $booking_id[$i]; ?>'>
+              <button>presss</button>
            </form>
         </div>
         </center>
@@ -129,11 +148,11 @@
       </div>
     </div>
   </div>
-";
+
       
 
-        }
+       <?php }
 
-    echo "</table>";
+    echo "</table>";?>
 
- ?> 
+ 
