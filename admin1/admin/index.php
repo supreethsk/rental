@@ -70,7 +70,7 @@ include 'config_db.php';
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: -90px !important;
+    left: -110px !important;
     z-index: 1000;
     display: none;
     float: left;
@@ -128,7 +128,6 @@ include 'config_db.php';
         <li style="list-style:none;" class="dropdown user user-menu ml-auto">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="logo.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">supreeth</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
