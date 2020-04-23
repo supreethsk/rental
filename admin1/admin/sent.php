@@ -1,12 +1,3 @@
-<?php
-
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +8,16 @@ require 'PHPMailer/SMTP.php';
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>		
 </head>
 <body>
-<?php 
+<?php
+
+include "config_db.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
 $to=$_GET['id'];
+$vendor_id=$_GET['vendor_id'];
 
 $mail= new PHPMailer;
 $mail->isSMTP();
@@ -37,11 +36,27 @@ $mail->Body = $mailContent;
 if(!$mail->send()){
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
-}else{?>
-	<div class="row">
+}else{
+  $sql="select * from vendor where vendor_id='$vendor_id'";
+  $query=mysqli_query($db,$sql);
+  
+ while($row = $query->fetch_assoc()) {
+   $vendorid=$row['vendor_id'];
+   $vendor_name=$row['full_name'];
+   $vendor_phone=$row['phone'];
+   $vendor_email=$row['email'];
+   $vendor_city=$row['vendor_city'];
+     
+ 
+$query1 = "INSERT INTO `vendor_req`(`request_id`, `name`, `phone_no`, `email`, `city`) VALUES ('$vendorid','$vendor_name','$vendor_phone','$vendor_email','$vendor_city')";
+    $success = mysqli_query($db,$query1);
+if($success==true){
+       echo "1";}
+ }}?>
+<div class="row">
 			<div class="col-md-12 col-xl-12 col-sm-12 col-xs-12 ">
 				<div class=" d-flex justify-content-center mt-5">
-						<img src="images/2-rev.jpg" width="180" class="mx-auto">
+						<img src="" width="180" class="mx-auto">
 					</div>
 				<p style="text-align: center;font-weight: bold;font-size: 20px;margin-top:50px;margin-bottom: 20px;">Message sent  Sucessfully</p> 
 				<!-- <p style="text-align:center;font-size: 15px;margin-bottom: 20px;">If you want to send more ,click below button</p> -->
@@ -50,6 +65,5 @@ if(!$mail->send()){
 				</div>
 					</div>
 	</div>
- <?php } ?>
-</body>
+	</body>
 </html>
