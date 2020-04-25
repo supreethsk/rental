@@ -200,7 +200,7 @@
                 <td><?php echo $row['vendor_city']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
-                <td><a href="mailer.php?id=<?php echo $row['email']?>"><button>Request</button></a> </td> 
+                <!-- <td><a href="mailer.php?id=<?php echo $row['email']?>"><button>Request</button></a> </td>  -->
                     
                    
             </tr>
