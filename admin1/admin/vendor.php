@@ -49,14 +49,14 @@
                 <td><?php echo $row['vendor_city']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
-                <td><a href="mailer.php?id=<?php echo $row['email']?>"><button>Request</button></a> </td> 
+                <!-- <td><a href="mailer.php?id=<?php echo $row['email']?>"><button>Request</button></a> </td>  -->
                     
                    
             </tr>
         <?php } }?>
         </tbody>
 </table>
-<table border="2" class="table">
+<!-- <table border="2" class="table">
     <thead class="thead-dark">
             <tr>
                 
@@ -88,6 +88,13 @@
             </tr>
         <?php } }?>
         </tbody>
-</table>
-            </body>
-            </html>
+</table> -->
+<form action="addvendor.php" method="post">
+    <input type="text" name="name" placeholder="enter name">
+    <input type="phone" name="phone" placeholder=" enter phone">
+    <input type="email" name="email" placeholder="enter email">
+    <input type="city" name="city" placeholder="entercity">
+    <button>add vendor</button>
+</form>
+</body>
+</html>

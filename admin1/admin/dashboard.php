@@ -34,7 +34,7 @@
          $payment_type[$i]=$row2['payment_type'];
          $email[$i]=$row2['cutomer_email'];
          $i++;
-         
+         echo $i;
     }  
 
     function delete() {
@@ -63,17 +63,17 @@
              <td><?php echo$customer_name[$i];?></td>
              <td><?php echo $payment_type[$i];?></td>
              <td><?php echo $pickup_time[$i]?></td>
-             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_$i'>
+             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target="#myModal_$i">
              Assignvendor
            </button></td>
-             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal$i'>
+             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target="#myModal$i">
              Open modal
            </button></td>
             </tr>
             </tbody>
 
    
-    <div class='modal' id='myModal$i'>
+    <div class="modal" id="myModal$i">
     <div class='modal-dialog'>
       <div class='modal-content'>
       
@@ -105,7 +105,7 @@
        
 
  
-    <div class='modal' id='myModal_$i'>
+    <div class='modal' id="myModal_$i">
     <div class='modal-dialog'>
       <div class='modal-content'>
       
