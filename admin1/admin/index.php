@@ -170,6 +170,10 @@ include 'config_db.php';
           <h1 class="mt-4">Customers</h1>
           <p><?php include "customer.php" ?></p>
         </div>
+        <div class="vendor-requests" style="display: none;">
+          <h1 class="mt-4">Vendor Requests</h1>
+          <p><?php include "vendor_req.php" ?></p>
+        </div>
       </div>
     </div>
     <!-- /#page-content-wrapper -->

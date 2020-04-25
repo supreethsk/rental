@@ -40,7 +40,7 @@ echo $id;
               <td><?php echo $vendor_email;?></td>
                <td><?php echo $vendor_phone;?></td>
                 <td><?php echo $vendor_city;?></td>
-                <td><a href="sent.php?id=<?php echo $vendor_email;?>"><button>Request</button></a> </td> 
+                <td><a href="sent.php?id=<?php echo $vendor_email;?>&vendor_id=<?php echo  $vendor_id;?>"><button>Request</button></a> </td> 
                  <td><a href="vendorasign.php?id=<?php echo $vendor_id; ?>&bookingid=<?php echo $id; ?>"><button>confirm</button></a> </td> 
            </tr>
          <?php } ?>
