@@ -117,7 +117,8 @@ include 'config_db.php';
         <a href="vendor.php" class="list-group-item list-group-item-action bg-light" id="vendor">Vendor List</a>
         <a href="vehicle.php" class="list-group-item list-group-item-action bg-light" id="vehicle">Vehicle List</a>
         <a href="#" class="list-group-item list-group-item-action bg-light" id="customer">Customer List</a>
-      </div>
+        <a href="vendor_req.php" class="list-group-item list-group-item-action bg-light" id="customer">Request vendor</a>  
+       </div>
     </div>
     <!-- /#sidebar-wrapper -->
 
@@ -157,7 +158,7 @@ include 'config_db.php';
         <div class="dashboard"  style="display: block;">
           <h1 class="mt-4">Dashboard</h1>
 
-          <p><?php include "dashboard.php" ?></p>
+          <p></p>
         </div>
         <a href="vendor.php"><div class="vendor-list" style="display: none;">
           <h1 class="mt-4">Vendors</h1></a>

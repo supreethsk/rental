@@ -13,7 +13,7 @@ if(mysqli_num_rows($result) > 0)
 		$user_id=$row['id'];
         $_SESSION['id'] = $user_id;	
 	}		
-	echo ("<script>location.href='index.php'</script>");
+	echo ("<script>location.href='dashboard.php'</script>");
 			
 }
 else

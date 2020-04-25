@@ -28,7 +28,7 @@ $file_ext = strtolower(end($tmp));
       }
      
       if(empty($errors)==true) {
-       move_uploaded_file($file_tmp,"upload/".$file_name);
+       move_uploaded_file($file_tmp,"img/".$file_name);
 }
 $query = "INSERT INTO `vehicle`( `vehicle_name`, `vehicle_satus`, `vehicle_price`, `registercity`, `vehicle_image`) VALUES ('$vehiclename','$vehiclestatus','$price','$registercity','$file_name')";
     $success = mysqli_query($db,$query);

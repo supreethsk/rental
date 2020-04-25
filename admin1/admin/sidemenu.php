@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,13 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   
-  <title>Simple Sidebar - Start Bootstrap Template</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Admin Dasboard</title>
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,6 +17,7 @@
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
 <link href="style.css" rel="stylesheet">
+
 <style>
   .user-image {
     float: left;
@@ -95,20 +91,19 @@
 }
   </style>
 </head>
+
 <body>
 
-
-
-<div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"><img style="width: 200px;" src="logo.png"></div>
       <div class="list-group list-group-flush">
-        <a href="dashboard.php" class="list-group-item list-group-item-action bg-light" id="dash">Dashboard</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" id="dash">Dashboard</a>
         <a href="vendor.php" class="list-group-item list-group-item-action bg-light" id="vendor">Vendor List</a>
         <a href="vehicle.php" class="list-group-item list-group-item-action bg-light" id="vehicle">Vehicle List</a>
-        <a href="customer.php" class="list-group-item list-group-item-action bg-light" id="customer">Customer List</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light" id="customer">Customer List</a>
         <a href="vendor_req.php" class="list-group-item list-group-item-action bg-light" id="customer">Request vendor</a>  
        </div>
     </div>
@@ -144,56 +139,17 @@
             </ul>
           </li>
       </div> 
-
-<?php
- include "config_db.php";
-
-  $sql="SELECT * FROM customer";
-    $result=mysqli_query($db, $sql);
-    $i=1;
-    while($row=mysqli_fetch_assoc($result))
-    {
-        $customer_id[$i] = $row['customer_id']; 
-        $customer_name[$i] = $row['customer_name'];
-        $customer_email[$i] = $row['cutomer_email'];
-        $customer_phone[$i] = $row['customer_phone'];
-        $customer_address[$i] = $row['customer_address'];
-        $customer_payment[$i] = $row['payment_type'];
         
-         $i++;
-         
-    }  
 
-    //Start table
-    echo '<table class="table">';
-    echo "<thead><tr><th>Customer id</th><th>Customer name</th>
-    <th>customer_email</th>
-    <th>customer_phone</th>
-    <th>customer_address</th>
-    <th>customer_payment</th></tr></thead>";
+      
+    <!-- /#page-content-wrapper -->
 
-    // Loop through the results from the database
-    for ($i = 1; $i <=count($customer_id); $i++)
-    {
-    // Show entries
-        echo    
-            "
-            <tbody>
-            <tr>
-            <td>$customer_id[$i]</td>
-            <td>$customer_name[$i]</td>
-            <td>$customer_email[$i]</td>
-            <td>$customer_phone[$i]</td>
-            <td>$customer_address[$i]</td>
-            <td>$customer_payment[$i]</td>
-            </tr>
-            </tbody>";
+  </div>
+  
+  <!-- /#wrapper -->
 
-        }
-
-    echo "</table>"
- ?> 
-<script src="vendor/jquery/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
@@ -209,6 +165,34 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-  </body>
-  
-  </html>
+<script>
+$(document).ready(function(){
+  $("#dash").click(function(){
+    $(".dashboard").css("display","block");
+    $(".vendor-list").css("display","none");
+    $(".vehicle-list").css("display","none");
+    $(".customer-list").css("display","none");
+  });
+  $("#vendor").click(function(){
+    $(".dashboard").css("display","none");
+    $(".vendor-list").css("display","block");
+    $(".vehicle-list").css("display","none");
+    $(".customer-list").css("display","none");
+  });
+  $("#vehicle").click(function(){
+    $(".dashboard").css("display","none");
+    $(".vendor-list").css("display","none");
+    $(".vehicle-list").css("display","block");
+    $(".customer-list").css("display","none");
+  });
+  $("#customer").click(function(){
+    $(".dashboard").css("display","none");
+    $(".vendor-list").css("display","none");
+    $(".vehicle-list").css("display","none");
+    $(".customer-list").css("display","block");
+  });
+});
+</script>
+</body>
+
+</html>
