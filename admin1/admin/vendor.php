@@ -207,7 +207,7 @@
         <?php } }?>
         </tbody>
 </table>
-<table  class="table">
+<!-- <table  class="table">
     <thead class="thead-dark">
             <tr>
                 
@@ -239,7 +239,7 @@
             </tr>
         <?php } }?>
         </tbody>
-</table>
+</table> -->
 <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
