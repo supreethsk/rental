@@ -29,8 +29,11 @@ $query = "INSERT INTO `check_out`( `payment_id`, `payment_amouunt`, `card_id`, `
 		if($success)
 		{
 			/*echo "Payment Successfull";*/
-			$sql =  "INSERT INTO `carbooking`(`booking_type`, `source`, `destination`, `pickup_date`, `drop_date`, `pickup_time`, `vehicle_id`, `user_id`, `payment_id`,`vendor_id`) VALUES ('$book','$from','$to','$pick_up','$return','$pick_up_at','$vehicle_id','$customer_id','$checkout_id','')";
+			$sql =  "INSERT INTO `carbooking`(`booking_type`, `source`, `destination`, `pickup_date`, `drop_date`, `pickup_time`, `vehicle_id`, `user_id`, `payment_id`,`vendor_id`) VALUES ('$book','$from','$to','$pick_up','$return','$pick_up_at','$vehicle_id','$customer_id','$checkout_id','1')";
 			$result = mysqli_query($db,$sql);
+			if($result!=true){
+				echo "1";
+			}
 			echo "<script>
 				alert('Payment Successfull');
 				
