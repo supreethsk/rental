@@ -295,7 +295,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     
     </section>
 
-    <div class="row m-5" style="border-bottom: 1px solid #FCC938;">
+    <!-- <div class="row m-5" style="border-bottom: 1px solid #FCC938;">
         <div class="col-4 pl-5">
            <h3 class="yellow"><b><i>11 COUNTRIES</i></b></h3> 
         </div>
@@ -363,7 +363,63 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 </div>
             </div>
         </div>
+    </div> -->
+    <div class="row m-0 mt-5 justify-content-center">
+        <h2 style="border-bottom:2px solid black">FEATURES</h2>
     </div>
+    <div class="row">
+      <div class="col">
+      <img style="width:inherit;padding: 11px;" src="1.jpg" />
+      </div>
+      <div class="col">
+      <img style="width:inherit;padding: 11px;" src="2.jpg" />
+      </div>
+      <div class="col">
+      <img style="width:inherit;padding: 11px;" src="3.jpg" />
+      </div>
+      <div class="col">
+      <img style="width:inherit;padding: 11px;" src="4.jpg" />
+      </div>
+      <div class="col">
+      <img style="width:inherit;padding: 11px;" src="5.jpg" />
+      </div>
+    </div>
+
+    <div class="row m-0 mt-5 justify-content-center">
+        <h2 style="border-bottom:2px solid black">ABOUT US</h2>
+    </div>
+   
+    
+    <div class="row m-5" >
+        <div class="col-1"></div>
+        <div class="col-10">
+        <div class="row m-5" >
+        <h4 class="" style="border-bottom: 1px solid #000;"><b>International car rentals.</b></h4>
+        <p class="" style="font-size: 20px">
+        We at <b>aywa cab</b> welcome all the specified customer who are looking fpr premium class vehicles
+with neat and hygienic environment and friendly drivers who provide customers with reliable
+and premium Intercity and Local car rental services. We have been identified as the best service
+provider and awarded by various institutions.and corporate for our prompt services.
+        </p>
+        </div>
+        <div class="row m-5" >
+        <h4 class="" style="border-bottom: 1px solid #000;"><b>Most of our lifes time will be spend on roads</b></h4>
+        <p class="" style="font-size: 20px">
+        Have you ever been in a situation where you want to drop everything, get in a car, and leave? Well,
+you’re not alone! The idea of going on a road trip to explore is not a bad idea. In fact, there are a lot of
+adventurers out there who voyage the world with all their belongings in one single vehicle.<br>
+<br>
+Today, we are in an age where we pursue almost everything in haste and just hurry past it. We do not
+take the time to just sit, breathe and take it all in.<br>
+<br>
+We prefer darting from one country to another country on a cramped airline with no leg space rather
+than indulging in a road trip to places. The main culprit – hurry to do it all!
+In fact, we see no other way to travel than by way of airplanes. But if you have a car or you can rent one
+then we will show you why travel by road is the new way of travel
+        </p>
+    </div>
+
+
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -405,39 +461,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
   </a>
 </div>
 
-<div class="row m-0 justify-content-center">
-        <h2 style="border-bottom:2px solid black">ABOUT US</h2>
-    </div>
-   
-    
-    <div class="row m-5" >
-        <div class="col-1"></div>
-        <div class="col-10">
-        <div class="row m-5" >
-        <h4 class="yellow" style="border-bottom: 1px solid #FCC938;"><b>International car rentals.</b></h4>
-        <p class="blue" style="font-size: 20px">
-        We at <b>aywa cab</b> welcome all the specified customer who are looking fpr premium class vehicles
-with neat and hygienic environment and friendly drivers who provide customers with reliable
-and premium Intercity and Local car rental services. We have been identified as the best service
-provider and awarded by various institutions.and corporate for our prompt services.
-        </p>
-        </div>
-        <div class="row m-5" >
-        <h4 class="yellow" style="border-bottom: 1px solid #FCC938;"><b>Most of our lifes time will be spend on roads</b></h4>
-        <p class="blue" style="font-size: 20px">
-        Have you ever been in a situation where you want to drop everything, get in a car, and leave? Well,
-you’re not alone! The idea of going on a road trip to explore is not a bad idea. In fact, there are a lot of
-adventurers out there who voyage the world with all their belongings in one single vehicle.<br>
-<br>
-Today, we are in an age where we pursue almost everything in haste and just hurry past it. We do not
-take the time to just sit, breathe and take it all in.<br>
-<br>
-We prefer darting from one country to another country on a cramped airline with no leg space rather
-than indulging in a road trip to places. The main culprit – hurry to do it all!
-In fact, we see no other way to travel than by way of airplanes. But if you have a car or you can rent one
-then we will show you why travel by road is the new way of travel
-        </p>
-    </div>
+
     <div class="row m-0 justify-content-center">
         <h2 style="border-bottom:2px solid black">SERVICES</h2>
     </div>
@@ -450,7 +474,7 @@ then we will show you why travel by road is the new way of travel
   <button class="btn11 btn1">Airport Taxi</button>
 </div>
     <div style="text-align: center" class="mb-5">
-    <span class="blinking">Now travel begins by Calling AYAW !!!!</span>
+    <span class="blinking">Now travel begins by Calling AYWA !!!!</span>
     </div>
         </div>
 

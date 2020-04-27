@@ -240,6 +240,18 @@
         <?php } }?>
         </tbody>
 </table>
+
+            
+</table> -->
+<form action="addvendor.php" method="post">
+    <input type="text" name="name" placeholder="enter name">
+    <input type="phone" name="phone" placeholder=" enter phone">
+    <input type="email" name="email" placeholder="enter email">
+    <input type="city" name="city" placeholder="entercity">
+    <button>add vendor</button>
+</form>
+
+
 <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -256,15 +268,5 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-            </body>
-            </html>
-</table> -->
-<form action="addvendor.php" method="post">
-    <input type="text" name="name" placeholder="enter name">
-    <input type="phone" name="phone" placeholder=" enter phone">
-    <input type="email" name="email" placeholder="enter email">
-    <input type="city" name="city" placeholder="entercity">
-    <button>add vendor</button>
-</form>
 </body>
 </html>
