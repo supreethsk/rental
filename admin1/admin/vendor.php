@@ -173,6 +173,9 @@
  include "config_db.php";
 
  ?>
+
+
+<a href="vendorform.php">Register New Vendor</a>
   <table class="table">
     <thead>
             <tr>
@@ -242,15 +245,7 @@
 </table>
 
             
-</table> -->
-<form action="addvendor.php" method="post">
-    <input type="text" name="name" placeholder="enter name">
-    <input type="phone" name="phone" placeholder=" enter phone">
-    <input type="email" name="email" placeholder="enter email">
-    <input type="city" name="city" placeholder="entercity">
-    <button>add vendor</button>
-</form>
-
+</table>
 
 <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

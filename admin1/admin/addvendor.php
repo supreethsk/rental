@@ -9,7 +9,7 @@ include "config_db.php";
 if($success==true){
 	echo "1";
 	 echo "<script>
-       window.history.back();
+       window.history.back();alert ('added successfully');
        </script>";
 }
 ?>

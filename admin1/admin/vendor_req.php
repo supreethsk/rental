@@ -149,7 +149,7 @@
  include "config_db.php";
 
  ?>
-  <table border="1" class="table">
+  <table class="table">
     <thead>
             <tr>
                 
