@@ -241,11 +241,11 @@
     font-weight: bold;
 }
 @keyframes blinkingText{
-	0%{		color: #FCC938;	}
-	49%{	color: #FCC938;	}
+	0%{		color: #000;	}
+	49%{	color: #000;	}
 	50%{	color: transparent;	}
-	99%{	color:#FCC938;	}
-	100%{	color: #FCC938;	}
+	99%{	color:#000;	}
+	100%{	color: #000;	}
 }
 .LightBlueBg
 {

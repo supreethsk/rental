@@ -367,21 +367,24 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     <div class="row m-0 mt-5 justify-content-center">
         <h2 style="border-bottom:2px solid black">FEATURES</h2>
     </div>
-    <div class="row">
-      <div class="col">
-      <img style="width:inherit;padding: 11px;" src="1.jpg" />
+    <div class="row m-0">
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="GST Bills copy.png" />
       </div>
-      <div class="col">
-      <img style="width:inherit;padding: 11px;" src="2.jpg" />
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="Professional drivers copy.png" />
       </div>
-      <div class="col">
-      <img style="width:inherit;padding: 11px;" src="3.jpg" />
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="Defensive drivers copy.png" />
       </div>
-      <div class="col">
-      <img style="width:inherit;padding: 11px;" src="4.jpg" />
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="Reliable Services copy.png" />
       </div>
-      <div class="col">
-      <img style="width:inherit;padding: 11px;" src="5.jpg" />
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="Other Travel Services copy.png" />
+      </div>
+      <div class="col p-0">
+      <img style="width:100%;padding: 11px;" src="Online and tele Booking copy.png" />
       </div>
     </div>
 
@@ -391,8 +394,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
    
     
     <div class="row m-5" >
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-1 p-0"></div>
+        <div class="col-10 p-0">
         <div class="row m-5" >
         <h4 class="" style="border-bottom: 1px solid #000;"><b>International car rentals.</b></h4>
         <p class="" style="font-size: 20px">
@@ -462,17 +465,30 @@ then we will show you why travel by road is the new way of travel
 </div>
 
 
-    <div class="row m-0 justify-content-center">
-        <h2 style="border-bottom:2px solid black">SERVICES</h2>
-    </div>
+    
     
 <div class="container">
-  <button class="btn11 btn1">Local Car Rentals</button>
-  <button class="btn11 btn2">Outstation Taxi</button>
-  <button class="btn11 btn1">One way Cabs</button>
-  <button class="btn11 btn2">Corporate Car rentals</button>
-  <button class="btn11 btn1">Airport Taxi</button>
-</div>
+<div class="row m-0 justify-content-center">
+        <h2 style="border-bottom:2px solid black">SERVICES</h2>
+    </div>
+    <div class="row">
+      <div class="col">
+      <img style="width:140%;padding: 11px;" src="Local Car Rentals copy.png" />
+      </div>
+      <div class="col">
+      <img style="width:140%;padding: 11px;" src="Outstation Taxi copy.png" />
+      </div>
+      <div class="col">
+      <img style="width:140%;padding: 11px;" src="oNE WAY CABS copy.png" />
+      </div>
+      <div class="col">
+      <img style="width:140%;padding: 11px;" src="Carporate Car Rentals copy.png" />
+      </div>
+      <div class="col">
+      <img style="width:140%;padding: 11px;" src="Airport Taxi copy.png" />
+      </div>
+    </div>
+    </div>
     <div style="text-align: center" class="mb-5">
     <span class="blinking">Now travel begins by Calling AYWA !!!!</span>
     </div>
