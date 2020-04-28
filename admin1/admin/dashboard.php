@@ -10,12 +10,6 @@
   <meta name="author" content="">
   
   <title>Simple Sidebar - Start Bootstrap Template</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -145,7 +139,6 @@
             </ul>
           </li>
       </div> 
-
 <?php
  include "config_db.php";
 
@@ -207,28 +200,17 @@
              <td><?php echo$customer_name[$i];?></td>
              <td><?php echo $payment_type[$i];?></td>
              <td><?php echo $pickup_time[$i]?></td>
-<<<<<<< HEAD
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_<?php echo $i ?>'>
              Assignvendor
            </button></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal<?php echo $i ?>'>
-=======
-             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target="#myModal_$i">
-             Assignvendor
-           </button></td>
-             <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target="#myModal$i">
->>>>>>> f45dfdd0e2b6084fd50fb389db86b529e7a520d1
              Open modal
            </button></td>
             </tr>
             </tbody>
 
    
-<<<<<<< HEAD
     <div class='modal' id='myModal<?php echo $i ?>'>
-=======
-    <div class="modal" id="myModal$i">
->>>>>>> f45dfdd0e2b6084fd50fb389db86b529e7a520d1
     <div class='modal-dialog'>
       <div class='modal-content'>
       
@@ -259,7 +241,6 @@
 
 
  
-<<<<<<< HEAD
     <div class='modal' id="myModal_<?php echo $i ?>">
         <div class='modal-dialog'>
           <div class='modal-content'>
@@ -301,41 +282,6 @@
                   </div>
             
           </div>
-=======
-    <div class='modal' id="myModal_$i">
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-      
-        <!-- Modal Header -->
-        <div class='modal-header'>
-          <h4 class='modal-title'> vendor list </h4>
-          <button type='button' class='close' data-dismiss='modal'>&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <center>
-        <div class='modal-body'>
-        <h3><?php echo $booking_id[$i];?></h3>
-           <form action='search.php' method='post'>
-                
-                
-               <select name='vendorcity'>
-                <?php 
-                $sql1="select * from vendor";
-                 $query=mysqli_query($db,$sql1);
-                 while ($vendorrow=$query->fetch_assoc()) {
-                     $vendor_city=$vendorrow['vendor_city'];
-                  ?>  
-                 
-                <option value="<?php echo $vendor_city; ?>"><?php echo $vendor_city; ?></option>
-               <?php  }?>
-                
-              
-              </select>
-              <input type='hidden' name='pname' value='<?php echo $booking_id[$i]; ?>'>
-              <button>presss</button>
-           </form>
->>>>>>> f45dfdd0e2b6084fd50fb389db86b529e7a520d1
         </div>
   </div>
 
