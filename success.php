@@ -47,12 +47,13 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
+
 $mail= new PHPMailer;
 $mail->isSMTP();
 $mail->Host     = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
-$mail->Username = 'pavitra@knobly.com';
-$mail->Password = 'pavi1405';
+$mail->Username = 'suanarora97@gmail.com';
+$mail->Password = 'supreeth123';
 $mail->SMTPSecure = 'tls';
 $mail->Port     = 587;
 $mail->setFrom('pavitra@knobly.com', 'Aywa');
