@@ -6,7 +6,7 @@ include "config_db.php";
 
 $query ="DELETE FROM `vehicle` WHERE vehicle_id='$id'";
     $success = mysqli_query($db,$query);
-if($success!=true){
+if($success==true){
        echo "<script>
         alert('updated sucessfully');
         window.location.href='vehicle.php';

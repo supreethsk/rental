@@ -1,3 +1,9 @@
+<?php
+session_start();
+ include "config_db.php"; 
+ $id = $_SESSION['id'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,17 +128,21 @@
                 <img src="logo.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Supreeth - Admin<br>
-                  <small> bangalore</small>
+                 <?php 
+                    $sql4 = "SELECT * FROM admin WHERE id = '$id'";
+                    $result4 = mysqli_query($db,$sql4);
+                    while ($row4 = $result4->fetch_assoc()) {?>
+                <a href="profile.php" style="font-color:black" class="text-capitalize "><?php echo $row4['full_name'];?></a>
+            <?php } ?>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="index.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -141,7 +151,7 @@
 
 <a href="vehicle_form.php">Register New Vehicle</a>
 <?php
- include "config_db.php";
+ 
 
 
   $sql="SELECT * FROM vehicle";

@@ -134,24 +134,19 @@ body{
 <body>
 
 <div class="form-style-10">
-<h1>REGISTER<span>NEW VEHICLE</span></h1>
- <form action="addvehicle.php" method="post" enctype = "multipart/form-data">
-    <div class="section"><span>1</span>VEHICLE NAME &amp; VEHICLE STATUS</div>
+<h1>REGISTER<span>NEW VENDOR</span></h1>
+ <form action="addvendor.php" method="post" enctype = "multipart/form-data">
+    <div class="section"><span>1</span>VENDOR NAME &amp; VENDOR PHONE NUMBER</div>
     <div class="inner-wrap">
-        <label>Vehicle Name <input type="text" name="vehiclename"></label>
-        <label>Vehicle Status<input type="text" name="vehiclestatus"></label>
+        <label>Vendor Name <input type="text" name="name"></label>
+        <label>Vendor Phone number<input type="text" name="phone"></label>
     </div>
 
-    <div class="section"><span>2</span>VEHICLE PRICE &amp; REGISTER CITY</div>
+    <div class="section"><span>2</span>VENDOR EMAIL ID &amp; VENDOR REGISTER CITY</div>
     <div class="inner-wrap">
-        <label>Vehicle Price <input type="text" name="price" ></label>
-        <label>Registered City <input type="text" name="registercity"></label>
+        <label>Vendor Email Id <input type="text" name="email" ></label>
+        <label>Vendor Registered City <input type="text" name="city"></label>
     </div>
-
-    <div class="section"><span>3</span>VEHICLE IMAGE</div>
-        <div class="inner-wrap">
-        <label>Upload Vehicle Image <input class="" type = "file" name = "file"/></label>
-        </div>
     <div class="button-section">
     <button name='submit' type="submit">submit</button>
     </div>

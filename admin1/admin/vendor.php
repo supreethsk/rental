@@ -1,3 +1,10 @@
+<?php
+session_start();
+ include "config_db.php"; 
+ $id = $_SESSION['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +17,10 @@
   
   <title>Simple Sidebar - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
@@ -122,17 +133,23 @@
                 <img src="logo.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Supreeth - Admin<br>
-                  <small> bangalore</small>
+                <p>
+                  <?php 
+                    $sql4 = "SELECT * FROM admin WHERE id = '$id'";
+                    $result4 = mysqli_query($db,$sql4);
+                    while ($row4 = $result4->fetch_assoc()) {?>
+                <a href="profile.php" style="font-color:black" class="text-capitalize "><?php echo $row4['full_name'];?></a>
+            <?php } ?>
+                </p>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="index.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -173,6 +190,9 @@
  include "config_db.php";
 
  ?>
+
+
+<a href="vendorform.php">Register New Vendor</a>
   <table class="table">
     <thead>
             <tr>
@@ -188,10 +208,12 @@
         <tbody>
             <?php
         // Get member rows
+            
         $result = $db->query("SELECT * FROM vendor ORDER BY vendor_id DESC");
+        $i=1;
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-            
+            $i++;
         ?>
             <tr>
                 
@@ -200,59 +222,62 @@
                 <td><?php echo $row['vendor_city']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
-                <!-- <td><a href="mailer.php?id=<?php echo $row['email']?>"><button>Request</button></a> </td>  -->
+                 <td><a href="" class="btn btn-info " data-toggle="modal" data-target="#myModal<?php echo $i ?>">Modify</a></td>
+                 <td><a href="vendor_delete.php?id=<?php echo $row['vendor_id']; ?>" class="btn btn-info ">Delete</a></td>
+           
                     
                    
             </tr>
+            <div class="modal" id="myModal<?php echo $i ?>">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+
+                    <h4 class="modal-title look">Enter vendor deatils</h4>
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+            <?php  echo $row['vendor_id']; ?>
+            <!-- Modal body -->
+            <div class="modal-body">
+                  
+<form action="vendor_update.php?id=<?php echo $row['vendor_id']; ?>" method="post">
+<div class="form-group">
+ <label>vendor Name :</label>
+ <input type="text" class="form-control" name="name" placeholder="Enter vendor Name" required>
+</div>
+<div class="form-group">
+ <label>vendor city :</label>
+ <input type="text" class="form-control" name="city" placeholder="Enter Company" required>
+</div>
+<div class="form-group">
+ <label>vendor email :</label>
+ <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+</div>
+<div class="form-group">
+ <label>vendor Phone :</label>
+ <input type="tel" class="form-control" name="phone" placeholder="Enter Phone" required>
+
+ 
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+   
+                    <button type="submit" name="submit" class="btn btn-primary">Submit </button>
+                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
         <?php } }?>
         </tbody>
+        
+
 </table>
-<!-- <table  class="table">
-    <thead class="thead-dark">
-            <tr>
-                
-                <th>Car Name</th>
-                <th>Car Price</th>
-                <th>Car Seat</th>
-                
-                
-
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-        // Get member rows
-        $result1 = $db->query("SELECT * FROM vendor_det ORDER BY vendor_det_id DESC");
-        if($result1->num_rows > 0){
-            while($row1 = $result1->fetch_assoc()){
-            
-        ?>
-            <tr>
-                
-                
-                <td><?php echo $row1['car_names']; ?></td>
-                
-                <td><?php echo $row1['car_price']; ?></td>
-                <td><?php echo $row1['car_seat']; ?></td>
-                    
-
-            </tr>
-        <?php } }?>
-        </tbody>
-<<<<<<< HEAD
-</table> -->
 
 
-
-            
-</table>
-<form action="addvendor.php" method="post">
-    <input type="text" name="name" placeholder="enter name">
-    <input type="phone" name="phone" placeholder=" enter phone">
-    <input type="email" name="email" placeholder="enter email">
-    <input type="city" name="city" placeholder="entercity">
-    <button>add vendor</button>
-</form>
 
 
 

@@ -160,14 +160,14 @@ $sql =" SELECT * FROM vehicle";
     
     ?>
     <div class="col-6 p-0">
-        <div class="row m-0 mt-4 p-3">
-            <div class="col-sm-4">
+        <div class="row m-0 mt-4 p-3 ml-2 mr-2" style="border:1px solid black; border-radius:5px;">
+            <div class="col-sm-5">
                 <img src="car.jpg" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
                 <span class="text-primary text-uppercase font-weight-bold pt-3"><?php echo $car_name; ?></span><br>
                 <span class=" font-13">Sedan | AC | 4 Seats</span>
     
             </div>
-            <div class="col-8">
+            <div class="col-7">
                 <div class="row m-0">
                     <div class="col-sm-6 p-0">
                         <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>

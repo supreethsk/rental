@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
 	else {
 	echo "<script>
 	alert('user added successfully');
-	window.location.href = 'login.php';
+	window.location.href = 'index.php';
 	</script>";
 	}
 }
