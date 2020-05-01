@@ -259,7 +259,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 </div>
                 </div>
             </form>
-            <form method="post" action="vehicle.php" class="local" style="display: none">
+           <!--  booking local trip -->
+            <form method="post" action="localvehicle.php" class="local" style="display: none">
                 <h2 class="form_head mb-3">Make your trip</h2>
                
                 <div class="form-group">
@@ -269,12 +270,17 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 
                 <div class="form-group mr-2">
                     <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker4">
+                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder=
+                    "Date" id="my_date_picker4">
                 </div>
                 <div>
                 <div class="form-group">
                     <label class="label form_label">PICK-UP TIME</label>
                     <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
+                </div>
+                <div class="form-group">
+                   
+                    <input type="hidden" autocomplete="off" name="book" class="form-control timepicker" placeholder="Time" value="local">
                 </div>
                 </div>
                 <div style="text-align: center;">
@@ -283,8 +289,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 </div>
                 </div>
             </form>
-            <form class="airport">
-                 
+            <form class="airport" action="airportvehicle.php">
+                <input type="text" name=""> 
             </form>
             </div>
         </div>

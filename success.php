@@ -56,7 +56,7 @@ $mail->Username = 'suanarora97@gmail.com';
 $mail->Password = 'supreeth123';
 $mail->SMTPSecure = 'tls';
 $mail->Port     = 587;
-$mail->setFrom('pavitra@knobly.com', 'Aywa');
+$mail->setFrom('suanarora97@gmail.com', 'Aywa');
 $mail->addAddress($email);
 $mail->Subject = 'confirming mail';
 $mail->isHTML(true);

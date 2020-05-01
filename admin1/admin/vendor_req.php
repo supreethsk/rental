@@ -187,7 +187,7 @@ session_start();
                 <td><?php echo $row['city']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['phone_no']; ?></td>
-                   <td><a href="vendorasign.php" ><button class="btn btn-info">confirm</button></a> </td> 
+                   <td><a href="vendorasign.php?id=<?php echo $row['vendor_id']; ?>" ><button class="btn btn-info">confirm</button></a> </td> 
                     
                    
             </tr>
