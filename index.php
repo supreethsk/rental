@@ -289,8 +289,46 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 </div>
                 </div>
             </form>
-            <form class="airport" action="airportvehicle.php">
-                <input type="text" name=""> 
+            <form class="airport" action="airportvehicle.php" style="display: none">
+            <h2 class="form_head mb-3">Make your trip</h2>
+               
+               <div class="form-group">
+                   <label class="label form_label">City</label>
+                   <input type="text"  name="from" class="form-control" id="search_input1" placeholder="City, Airport, Station, etc">
+               </div>
+
+               <div class="form-group">
+                  <label class="label form_label">Trip</label>
+                    <select class="form-control"  placeholder="City">
+                    <option value="" disabled selected>Select Trip Type</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+               </div>
+               
+               <div class="form-group mr-2">
+                   <label class="label form_label ">PICK-UP DATE</label>
+                   <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder=
+                   "Date" id="my_date_picker4">
+               </div>
+               <div>
+               <div class="form-group">
+                   <label class="label form_label">PICK-UP TIME</label>
+                   <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
+               </div>
+               <div class="form-group">
+                  
+                   <input type="hidden" autocomplete="off" name="book" class="form-control timepicker" placeholder="Time" value="local">
+               </div>
+               </div>
+               <div style="text-align: center;">
+               <div class="form-group">
+                   <input type="submit" class="btn btn-primary py-3 px-4" value="Search Vehicle">
+               </div>
+               </div>
             </form>
             </div>
         </div>
