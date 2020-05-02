@@ -270,8 +270,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                 
                 <div class="form-group mr-2">
                     <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder=
-                    "Date" id="my_date_picker4">
+                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker4">
                 </div>
                 <div>
                 <div class="form-group">
@@ -309,8 +308,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
                
                <div class="form-group mr-2">
                    <label class="label form_label ">PICK-UP DATE</label>
-                   <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder=
-                   "Date" id="my_date_picker4">
+                   <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker5">
                </div>
                <div>
                <div class="form-group">
@@ -406,7 +404,8 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
             </div>
         </div>
     </div> -->
-    <div class="row m-0 mt-5 justify-content-center">
+    <div class="color">
+    <div class="row m-0 pt-5 justify-content-center">
         <h2 style="border-bottom:2px solid black">FEATURES</h2>
     </div>
     <div class="row m-0">
@@ -429,17 +428,18 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
       <img style="width:100%;padding: 11px;" src="Online and tele Booking copy.png" />
       </div>
     </div>
-
-    <div class="row m-0 mt-5 justify-content-center">
-        <h2 style="border-bottom:2px solid black">ABOUT US</h2>
+</div>
+<div class="color1">
+    <div class="row m-0 pt-5 justify-content-center">
+        <h2 style="border-bottom:2px solid white">ABOUT US</h2>
     </div>
    
     
-    <div class="row m-5" >
+    <div class="row" >
         <div class="col-1 p-0"></div>
         <div class="col-10 p-0">
         <div class="row m-5" >
-        <h4 class="" style="border-bottom: 1px solid #000;"><b>International car rentals.</b></h4>
+        <h4 class="" style="border-bottom: 1px solid white;"><b>International car rentals.</b></h4>
         <p class="" style="font-size: 20px">
         We at <b>aywa cab</b> welcome all the specified customer who are looking fpr premium class vehicles
 with neat and hygienic environment and friendly drivers who provide customers with reliable
@@ -448,7 +448,7 @@ provider and awarded by various institutions.and corporate for our prompt servic
         </p>
         </div>
         <div class="row m-5" >
-        <h4 class="" style="border-bottom: 1px solid #000;"><b>Most of our lifes time will be spend on roads</b></h4>
+        <h4 class="" style="border-bottom: 1px solid white;"><b>Most of our lifes time will be spend on roads</b></h4>
         <p class="" style="font-size: 20px">
         Have you ever been in a situation where you want to drop everything, get in a car, and leave? Well,
 you’re not alone! The idea of going on a road trip to explore is not a bad idea. In fact, there are a lot of
@@ -511,7 +511,7 @@ then we will show you why travel by road is the new way of travel
     
 <div class="container">
 <div class="row m-0 justify-content-center">
-        <h2 style="border-bottom:2px solid black">SERVICES</h2>
+        <h2 style="border-bottom:2px solid white">SERVICES</h2>
     </div>
     <div class="row">
       <div class="col">
@@ -535,7 +535,7 @@ then we will show you why travel by road is the new way of travel
     <span class="blinking">Now travel begins by Calling AYWA !!!!</span>
     </div>
         </div>
-
+    </div>
 
 
         <div class="col-1"></div>
@@ -636,6 +636,24 @@ $(document).ready(function(){
                 $('#my_date_picker2').change(function() { 
                     endDate = $(this).datepicker('getDate'); 
                     $("#my_date_picker4").datepicker("option", "maxDate", endDate); 
+                })
+
+                $(function() { 
+                    $("#my_date_picker5").datepicker({}); 
+                }); 
+  
+                $(function() { 
+                    $("#my_date_picker2").datepicker({}); 
+                }); 
+  
+                $('#my_date_picker5').change(function() { 
+                    startDate = $(this).datepicker('getDate'); 
+                    $("#my_date_picker2").datepicker("option", "minDate", startDate); 
+                }) 
+  
+                $('#my_date_picker2').change(function() { 
+                    endDate = $(this).datepicker('getDate'); 
+                    $("#my_date_picker5").datepicker("option", "maxDate", endDate); 
                 })
 
                 $('.timepicker').timepicker({
