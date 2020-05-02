@@ -158,7 +158,7 @@
         $customer_email[$i] = $row['cutomer_email'];
         $customer_phone[$i] = $row['customer_phone'];
         $customer_address[$i] = $row['customer_address'];
-        $customer_payment[$i] = $row['payment_type'];
+        $customer_payment[$i] = $row['amount_paid'];
         
          $i++;
          

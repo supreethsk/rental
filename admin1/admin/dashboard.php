@@ -178,7 +178,9 @@ session_start();
          $vehicle_price[$i]=$row1['vehicle_price'];
     $row2=mysqli_fetch_assoc($result2);
          $customer_name[$i]=$row2['customer_name'];
-         $payment_type[$i]=$row2['payment_type'];
+         $total_payment[$i]=$row2['total_payment'];
+         $due_amt[$i]=$row2['due_amount'];
+         $amt_paid[$i]=$row2['amount_paid'];
          $email[$i]=$row2['cutomer_email'];
          $i++;
          echo $i;
@@ -191,7 +193,7 @@ session_start();
     //Start table
     echo '<table class="table">';
     echo "<thead><tr><th>Booking type</th><th>Source</th><th>Destination</th><th>Pick up date </th><th>Drop date</th><th>Vehicle Name</th><th>User name</th>
-    <th>payment</th><th>Pick up time</th><th>Status</th><th>message</th></tr></thead>";
+    <th>total payment</th><th>Pending amount</th><th>Amount paid</th><th>Pick up time</th><th>Status</th><th>message</th></tr></thead>";
     
     // Loop through the results from the database
     for ($i = 1; $i <=count($booking_type); $i++)
@@ -208,7 +210,9 @@ session_start();
              <td><?php echo $drop_date[$i];?></td>
              <td><?php echo $vehicle_name[$i];?></td>
              <td><?php echo$customer_name[$i];?></td>
-             <td><?php echo $payment_type[$i];?></td>
+             <td><?php echo $total_payment[$i];?></td>
+             <td><?php echo $due_amt[$i];?></td>
+             <td><?php echo $amt_paid[$i];?></td>
              <td><?php echo $pickup_time[$i]?></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_<?php echo $i ?>'>
              Assignvendor

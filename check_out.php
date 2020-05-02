@@ -14,17 +14,21 @@ $pick_up=$_GET['pick_up'];
 $return=$_GET['return'];
 $pick_up_at=$_GET['pick_up_at'];
 $book=$_GET['book'];
+$payble_amt=$_POST['payble_amt'];
 echo $to;
 echo $pick_up;
 echo $id;
-
-$sql = "INSERT INTO customer (customer_name,cutomer_email,customer_phone,customer_address,payment_type) VALUES('$name','$email','$phone','$address','$payment_type')";
+echo $payble_amt;
+$due_amt=$payble_amt-$payment_type;
+echo "\n";
+echo $due_amt;
+$sql = "INSERT INTO customer (customer_name,cutomer_email,customer_phone,customer_address,total_payment,due_amount,amount_paid) VALUES('$name','$email','$phone','$address','$payble_amt','$due_amt','$payment_type')";
 $result = mysqli_query($db,$sql);
 $last_id = mysqli_insert_id($db);
 if (!$result) {
 echo $db->error;
 }
-	
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,7 +80,7 @@ echo $db->error;
     data-currency="INR"
     data-order_id=""//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order)
     data-buttontext="Pay with Razorpay"
-    data-name="Away"
+    data-name="Aywa"
     data-description=""
     data-image="logo.png"
     data-prefill.name=""
@@ -88,3 +92,5 @@ echo $db->error;
 </form>
 </body>
 </html>
+
+

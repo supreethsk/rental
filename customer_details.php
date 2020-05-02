@@ -60,6 +60,7 @@ $book=$_GET['book'];
    $vehicle_name = $row['vehicle_name'];
    echo $vehicle_name;
    $vehicle_price = $row['vehicle_price'];
+   echo $vehicle_price;
  }
  ?>
  <div class="container">
@@ -67,6 +68,14 @@ $book=$_GET['book'];
 
 		<div class="col-5 p-0">
 		<div class="form_wrap">
+      <?php echo $vehicle_price; 
+             
+        $gst_amt=$vehicle_price-($vehicle_price*100/(100+5));
+        echo $gst_amt;
+        $payble_amt=$vehicle_price+$gst_amt;
+        echo "\nx"  ;
+        echo $payble_amt;
+      ?>
 		<form action="check_out.php?id=<?php echo $id;?>&from=<?php echo $from; ?>&to=<?php echo $to; ?>&pick_up=<?php echo $pick_up;?>&return=<?php echo $return ?>;&pick_up_at=<?php echo $pick_up_at ?>&book=<?php echo $book; ?>" method="post">
 			<div class="dis">	
 		<h2 class="form_head mb-3">Make your trip</h2>
@@ -105,26 +114,30 @@ $book=$_GET['book'];
 				<div class="ml-5">
                 <div class="custom-control custom-radio  mr-2">
                        
-                        <input type="radio" name="payment_type" value="<?php echo round($vehicle_price/2); ?>" class="custom-control-input round" id="defaultChecked" name="defaultExampleRadios" checked>
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultChecked">Pay ₹ <?php echo round($vehicle_price/2); ?> now and rest after trip</label>
+                        <input type="radio" name="payment_type" value="<?php echo round($payble_amt/2); ?>" class="custom-control-input round" id="defaultChecked" name="defaultExampleRadios" checked>
+                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultChecked">Pay ₹ <?php echo round($payble_amt/2); ?> now and rest after trip</label>
                         </div>
 
                        
 
                         <!-- Default checked -->
                         <div class="custom-control custom-radio mr-2">
-                        <input type="radio" name="payment_type" value="<?php echo $vehicle_price; ?>" class="custom-control-input check" id="defaultUnchecked" name="defaultExampleRadios">
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked">Pay full amount (<?php echo $vehicle_price; ?>) now</label>
+                        <input type="radio" name="payment_type" value="<?php echo round($payble_amt); ?>" class="custom-control-input check" id="defaultUnchecked" name="defaultExampleRadios">
+                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked">Pay full amount (<?php echo round($payble_amt); ?>) now</label>
                         </div>
                    
                         <div class="custom-control custom-radio">
                         <input type="radio" name="payment_type" value="cashondeliver" class="custom-control-input mul" id="defaultUnchecked2" name="defaultExampleRadios">
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked2">Pay driver during the trip (<?php echo $vehicle_price; ?>)</label>
+                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked2">Pay driver during the trip (<?php echo round($payble_amt);?>)</label>
 						</div>
 						
 						<div class="custom-control custom-radio">
                         <input type="radio" name="payment_type" value="<?php echo $vehicle_price; ?>"  class="custom-control-input mul" id="defaultUnchecked3" name="defaultExampleRadios">
                         <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked3">Pay With Bank Reward Points</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                        <input type="hidden" name="payble_amt" value="<?php echo round($payble_amt); ?>"  class="custom-control-input mul" id="defaultUnchecked3" name="defaultExampleRadios">
+                        
                         </div>
 				</div>
 						</div>
