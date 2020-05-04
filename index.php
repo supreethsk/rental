@@ -406,7 +406,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     </div> -->
     <div class="color">
     <div class="row m-0 pt-5 justify-content-center">
-        <h2 style="border-bottom:2px solid black">FEATURES</h2>
+        <h2 style="border-bottom:2px solid white">FEATURES</h2>
     </div>
     <div class="row m-0">
       <div class="col p-0">
@@ -435,7 +435,7 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     </div>
    
     
-    <div class="row" >
+    <div class="row m-0" >
         <div class="col-1 p-0"></div>
         <div class="col-10 p-0">
         <div class="row m-5" >
