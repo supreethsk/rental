@@ -123,6 +123,17 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
 .title-black {
   color: black;
 }
+.inner{
+    overflow: hidden;
+}
+ 
+.inner img{
+    transition: all 1.5s ease;
+}
+ 
+.inner:hover img{
+    transform: scale(1.5);
+}
 
 @media all and (max-width: 500px) {
   .card-list {
@@ -159,20 +170,20 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
     <span class="navbar-toggler-icon"></span>
   </button>
   </div>
-  <div class="col-8">
+  <div class="col-9">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="#">HOME</a>
+        <a class="nav-link" style="font-weight:600; font-size:18px" href="#">HOME</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT</a>
+        <a class="nav-link" style="font-weight:600; font-size:18px" href="#about">ABOUT</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
+        <a class="nav-link" style="font-weight:600; font-size:18px" href="#features">FEATURES</a>
       </li>.
       <li class="nav-item">
-        <a class="nav-link" href="#">SPECIAL OFFER</a>
+        <a class="nav-link" style="font-weight:600; font-size:18px" href="#">SPECIAL OFFER</a>
       </li>
     </ul>
   </div>
@@ -404,33 +415,61 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
             </div>
         </div>
     </div> -->
+    <div class="color1">
+    <div class="container">
+      <div class="row m-0 ">
+        <div class="col"><img style="width:100%;padding: 11px;" src="11 Countries copy.png" /></div>
+        <div class="col"><img style="width:100%;padding: 11px;" src="200+ Vendors copy.png" /></div>
+        <div class="col"><img style="width:100%;padding: 11px;" src="2000+ Happy Customers copy.png" /></div>
+      </div>
+    </div>
+    </div>
     <div class="color">
-    <div class="row m-0 pt-5 justify-content-center">
+    <div id="features" class="row m-0 pt-5 justify-content-center">
         <h2 style="border-bottom:2px solid white">FEATURES</h2>
     </div>
     <div class="row m-0">
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="GST Bills copy.png" />
       </div>
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="Professional drivers copy.png" />
       </div>
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="Defensive drivers copy.png" />
       </div>
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="Reliable Services copy.png" />
       </div>
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="Other Travel Services copy.png" />
       </div>
-      <div class="col p-0">
+      <div class="col p-0 inner">
       <img style="width:100%;padding: 11px;" src="Online and tele Booking copy.png" />
       </div>
     </div>
+    <div class="container">
+    <div class="row m-0 justify-content-center">
+    <div class="col inner">
+      <img style="width:110%;padding: 11px;" src="Local Car Rentals copy.png" />
+      </div>
+      <div class="col inner">
+      <img style="width:110%;padding: 11px;" src="Outstation Taxi copy.png" />
+      </div>
+      <div class="col inner">
+      <img style="width:110%;padding: 11px;" src="oNE WAY CABS copy.png" />
+      </div>
+      <div class="col inner">
+      <img style="width:110%;padding: 11px;" src="Carporate Car Rentals copy.png" />
+      </div>
+      <div class="col inner">
+      <img style="width:110%;padding: 11px;" src="Airport Taxi copy.png" />
+      </div>
+    </div>
+    </div>
 </div>
 <div class="color1">
-    <div class="row m-0 pt-5 justify-content-center">
+    <div id="about" class="row m-0 pt-5 justify-content-center">
         <h2 style="border-bottom:2px solid white">ABOUT US</h2>
     </div>
    

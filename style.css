@@ -294,3 +294,7 @@
     z-index: 999999;
     border-radius: 5px;
 }
+.nv-font{
+    font-weight: 600;
+    font-size: 18px;
+}

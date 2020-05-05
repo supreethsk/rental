@@ -170,15 +170,17 @@ $sql =" SELECT * FROM vehicle";
             <div class="col-7">
                 <div class="row m-0">
                     <div class="col-sm-6 p-0">
+                    <div href="#" id="menu<?php echo $i?>" style="position:relative; color: #57a143;">Advance</div>
                         <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
-                        <div href="#" id="menu<?php echo $i?>" style="position:relative; color: #57a143;">Advanced</div>
+                        
                         <p class="flyout<?php echo $i?>" style="position:absolute;display:none;background-color: #ecf7e8;border: 1px solid #57a143;padding: 10px;z-index: 999999;border-radius: 5px;width:266%;"><span><strong class=" text-success">Advance :</strong><br>
                 If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
 </span></p>
                     </div>
                     <div class="col-6 p-0">
+                    <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Total amount</div> 
                         <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php echo $car_price; ?></span></strong>
-                        <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Fair details</div> 
+                        
                         <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
                         Approx. Roundtrip distance : 280 Kms.<br />
                         Minimum charged distance :  &nbsp225 Kms / Day <br />
@@ -320,7 +322,6 @@ $("#menu_<?php echo$i?>").hover(function(){
 
 
 
-
       <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> 
         </script> 
@@ -408,8 +409,6 @@ $("#menu_<?php echo$i?>").hover(function(){
       }); 
 
   });
-
-    });
     </script>
    
     <script>
