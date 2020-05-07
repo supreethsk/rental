@@ -203,6 +203,9 @@ ul.social-icons li a {
       <li class="nav-item">
         <a class="nav-link" style="font-weight:600; font-size:18px" href="#">SPECIAL OFFER</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" style="font-weight:600; font-size:18px" href="vendor/login.php">VENDOR SIGN IN</a>
+      </li>
     </ul>
   </div>
   </div>

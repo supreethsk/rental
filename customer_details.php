@@ -68,13 +68,14 @@ $book=$_GET['book'];
 
 		<div class="col-5 p-0">
 		<div class="form_wrap">
-      <?php echo $vehicle_price; 
+      <?php 
+      /*echo $vehicle_price; */
              
         $gst_amt=$vehicle_price-($vehicle_price*100/(100+5));
-        echo $gst_amt;
+       /* echo $gst_amt;*/
         $payble_amt=$vehicle_price+$gst_amt;
-        echo "\nx"  ;
-        echo $payble_amt;
+        /*echo "\nx"*/  
+        /*echo $payble_amt;*/
       ?>
 		<form action="check_out.php?id=<?php echo $id;?>&from=<?php echo $from; ?>&to=<?php echo $to; ?>&pick_up=<?php echo $pick_up;?>&return=<?php echo $return ?>;&pick_up_at=<?php echo $pick_up_at ?>&book=<?php echo $book; ?>" method="post">
 			<div class="dis">	
@@ -171,6 +172,10 @@ $book=$_GET['book'];
 				<div class="col-4"><label class="label form_label">Return Date :</label></div>
 				<div class="col-8"><span class="ml-3 mr-2"><?php echo $return; ?></span><i class="fa fa-check-circle check"></i></div>
 			</div>
+      <div class="row m-0">
+        <div class="col-4"><label class="label form_label">Pick up time :</label></div>
+        <div class="col-8"><span class="ml-3 mr-2"><?php echo $pick_up_at; ?></span><i class="fa fa-check-circle check"></i></div>
+      </div>
 			<div class="row m-0">
 				<div class="col-4"><label class="label form_label">Car Type :</label></div>
 				<div class="col-8"><span class="ml-3 mr-2"><?php echo $vehicle_name; ?></span><i class="fa fa-check-circle check"></i></div>
@@ -183,7 +188,7 @@ $book=$_GET['book'];
 			</div>
 		</div>
 		</div>
-    <?php include 'footer.php';?>
+
 
 		<script>
     

@@ -94,7 +94,7 @@ $sql =" SELECT * FROM vehicle";
     <div class="col-6 p-0">
         <div class="row m-0 mt-4 p-3 ml-2 mr-2" style="border:1px solid black; border-radius:5px;">
             <div class="col-sm-5">
-                <img src="car.jpg" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
+                <img src="<?php echo $car_image; ?>" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
                 <span class="text-primary text-uppercase font-weight-bold pt-3"><?php echo $car_name; ?></span><br>
                 <span class=" font-13">Sedan | AC | 4 Seats</span>
     
@@ -109,7 +109,12 @@ $sql =" SELECT * FROM vehicle";
 </span></p>
                     </div>
                     <div class="col-6 p-0">
-                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php echo $car_price; ?></span></strong>
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php
+                    $number = $car_price;
+                    $txt = sprintf(" %1\$.2f
+                   <br>",$number);
+                   echo $txt;
+                   ?></span></strong>
                         <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Fair details</div> 
                         <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
                         Approx. Roundtrip distance : 280 Kms.<br />

@@ -79,7 +79,7 @@ echo $db->error;
     data-amount="<?php echo $payment_type*100;?>" // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise or INR 500.
     data-currency="INR"
     data-order_id=""//This is a sample Order ID. Create an Order using Orders API. (https://razorpay.com/docs/payment-gateway/orders/integration/#step-1-create-an-order)
-    data-buttontext="Pay with Razorpay"
+   data-buttontext="Pay with Razorpay"
     data-name="Aywa"
     data-description=""
     data-image="logo.png"
@@ -89,8 +89,8 @@ echo $db->error;
     data-theme.color="#F37254"
 ></script>
 <input type="hidden" custom="Hidden Element" name="hidden">
+
 </form>
 </body>
 </html>
-
 
