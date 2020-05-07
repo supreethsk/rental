@@ -183,7 +183,7 @@ $book=$_GET['book'];
 			</div>
 		</div>
 		</div>
-
+    <?php include 'footer.php';?>
 
 		<script>
     

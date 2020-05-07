@@ -316,7 +316,7 @@ $("#menu_<?php echo$i?>").hover(function(){
         </div>
       </div>
 
-
+      <?php include 'footer.php';?>
 
 
 

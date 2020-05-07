@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CAR RENTAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -133,6 +134,23 @@ box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.2
  
 .inner:hover img{
     transform: scale(1.5);
+}
+ul.social-icons li a {
+    display: inline-block;
+    margin: 0;
+    width: 24px;
+    height: 25px;
+    background-color: #999;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: all .17s ease-in-out;
+    -moz-transition: all .17s ease-in-out;
+    -webkit-transition: all .17s ease-in-out;
+    -o-transition: all .17s ease-in-out;
 }
 
 @media all and (max-width: 500px) {
@@ -582,11 +600,7 @@ then we will show you why travel by road is the new way of travel
     </div>
     
     
-    
-
-<div class="footer">
-    Footer Content
-</div>
+    <?php include 'footer.php';?>
     <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> 
         </script> 
