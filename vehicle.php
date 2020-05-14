@@ -70,36 +70,15 @@ echo $_POST['pick_up_at'];*/
     <link rel="stylesheet" href="style.css">
     <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title></title>
     
  </head>
  <body>
  
- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navi2">
-        <div class="container">
-        <a class="navbar-brand" href="#">LOGO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item ">
-        <a class="nav-link" href="#">HOME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">ABOUT</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CONTACT</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">SPECIAL OFFER</a>
-      </li>
-    </ul>
-  </div>
-        </div>
-   </nav>
+ <?php 
+      include 'header.php';
+      ?>
    <div class="row m-0 data">
   <div class="container pl-5">
   <div class="row">
@@ -143,7 +122,8 @@ echo $pieces[0];
 </div>
 
 <div class="container">
-    
+    <img style="position:absolute;left: 0;width: 15%;height: 600px;" src="2_2.png">
+    <img style="position:absolute;right: 0;width: 15%;height: 600px;" src="1_1.png">
 <div class="row m-0">
     <?php
     $i=0;
@@ -171,7 +151,7 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0">
                     <div href="#" id="menu<?php echo $i?>" style="position:relative; color: #57a143;">Advance</div>
-                        <strong class="font-22"><span class="fas fa-inr">$</span> 1026</strong><br>
+                        <strong class="font-22"><span class="fas fa-inr">Rs.</span> 1026</strong><br>
                         
                         <p class="flyout<?php echo $i?>" style="position:absolute;display:none;background-color: #ecf7e8;border: 1px solid #57a143;padding: 10px;z-index: 999999;border-radius: 5px;width:266%;"><span><strong class=" text-success">Advance :</strong><br>
                 If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
@@ -180,7 +160,7 @@ $sql =" SELECT * FROM vehicle";
                     <div class="col-6 p-0">
                     <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Total amount</div> 
                     
-                        <strong class="font-20 mr-2" ><span class="fa fa-inr">$</span> <span><?php
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr">Rs.</span> <span><?php
                     $number = $car_price;
                     $txt = sprintf(" %1\$.2f
                    <br>",$number);
@@ -201,7 +181,7 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0 mt-4">
                         <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
-                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75</strong><br>
+                       Rs <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75 </strong><br>
                         
                         <strong>Per KM</strong>
                     </div>
@@ -220,6 +200,9 @@ $sql =" SELECT * FROM vehicle";
             </div>
             </div>
         </div>
+        <?php 
+      include 'footer.php';
+      ?>
         <script>
        $("#menu<?php echo$i?>").hover(function(){
     $('.flyout<?php echo$i?>').show();
@@ -234,7 +217,7 @@ $("#menu_<?php echo$i?>").hover(function(){
         </script>
     <?php } ?>
         
-
+    
  <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -321,11 +304,9 @@ $("#menu_<?php echo$i?>").hover(function(){
           </div>
         </div>
       </div>
-
-      <?php 
-      include 'footer.php';
-      ?>
-      
+      <div>
+       
+        </div>
 
 
 
@@ -433,5 +414,6 @@ autocomplete = new google.maps.places.Autocomplete((document.getElementById(sear
 });
 });
     </script>
+    
  </body>
  </html>

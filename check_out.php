@@ -6,7 +6,7 @@ $phone=$_POST['phone'];
 $address=$_POST['adresss'];
 $payment_type=$_POST['payment_type'];
 
-echo $payment_type;
+
 $id=$_GET['id'];
 $from=$_GET['from'];
 $to=$_GET['to'];
@@ -15,13 +15,9 @@ $return=$_GET['return'];
 $pick_up_at=$_GET['pick_up_at'];
 $book=$_GET['book'];
 $payble_amt=$_POST['payble_amt'];
-echo $to;
-echo $pick_up;
-echo $id;
-echo $payble_amt;
+
 $due_amt=$payble_amt-$payment_type;
-echo "\n";
-echo $due_amt;
+
 $sql = "INSERT INTO customer (customer_name,cutomer_email,customer_phone,customer_address,total_payment,due_amount,amount_paid) VALUES('$name','$email','$phone','$address','$payble_amt','$due_amt','$payment_type')";
 $result = mysqli_query($db,$sql);
 $last_id = mysqli_insert_id($db);
@@ -47,7 +43,7 @@ echo $db->error;
   font-weight: bold;
   border: 3px solid #f1f1f1;
   position: absolute;
-  top: 50%;
+  top: 54%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -67,8 +63,10 @@ echo $db->error;
         }
     </style>
 </head>
-<body style="background-color: orange;">
-    
+
+<body style="background-color: orange;" class="m-0">
+<img style="position:absolute;left: 0;width: 19%;height: auto;" src="3_3.png">
+    <img style="position:absolute;right: 0;width: 19%;height: auto;" src="6_6.png">
                <a class="logo" href="#"><img src="logo.png" width="12%" height="auto"></a>
                <h3 class="amount">Payable Amount : <?php echo $payment_type?></h3>
 <form action="success.php?customer_id=<?php echo $last_id;?>&from=<?php echo $from;?>&to=<?php echo $to; ?>&pick_up=<?php echo $pick_up; ?>&return=<?php echo $return; ?>&pick_up_at=<?php echo $pick_up_at;?>&book=<?php echo $book;?>&vehicle_id=<?php echo $id;?>" method="POST">

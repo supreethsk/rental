@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <style>
+       .foot {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: gray;
+   color: white;
+   text-align: center;
+}
+    </style>
 </head>
 <body>
-<div class="footer">
-<div class="row m-0">
-<div class="border-bottom-foot pb-2" style="color:black">
+<div class="foot">
+    <div class="container">
+<div class="row m-0 pt-2 pb-2">
+<div class="border-bottom-foot" style="color:black">
 <ul class="list-inline my-0">
 <li class="list-inline-item"><a  style="color:black" target="_blank" href="india-car-rental">Cab Services In India</a></li>
 <li class="list-inline-item">|</li>
@@ -21,7 +32,7 @@
 <li class="list-inline-item">|</li>
 <li class="list-inline-item"><a  style="color:black" href="faqs">FAQs</a></li>
 <li class="list-inline-item">|</li>
-<li class="list-inline-item"><a  style="color:black" href="terms-conditions">Terms &amp; Conditions</a></li>
+<li class="list-inline-item"><a  style="color:black" href="termsconditions.php">Terms &amp; Conditions</a></li>
 <li class="list-inline-item">|</li>
 <li class="list-inline-item"><a style="color:black" href="privacy-policy">Privacy Policy</a></li>
 </ul>
@@ -37,7 +48,9 @@
 <li><a rel="nofollow" style="margin-left: 10px" href="http://blog.clearcarrental.com" target="_blank"><i class="fa fa-rss"></i></a></li>
 </ul>
 </div>
-<div class="col-lg-12 LightGreyTxtColor text-center pt-2" style="background-color: darkgrey;">Copyright © AYWA Private Limited </div>
+    </div>
+<div class="LightGreyTxtColor text-center pt-2" style="background-color: darkgrey;">Copyright © AYWA Private Limited </div>
 </div>
+
 </body>
 </html>

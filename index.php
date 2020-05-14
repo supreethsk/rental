@@ -469,23 +469,25 @@ ul.social-icons li a {
       <img style="width:100%;padding: 11px;" src="Online and tele Booking copy.png" />
       </div>
     </div>
-    <div class="container">
+    <div class="">
     <div class="row m-0 justify-content-center">
-    <div class="col inner">
-      <img style="width:110%;padding: 11px;" src="Local Car Rentals copy.png" />
+<div class="col-1"></div>
+    <div class="col p-0 inner">
+      <img style="width:100%;" src="Local Car Rentals copy.png" />
       </div>
-      <div class="col inner">
-      <img style="width:110%;padding: 11px;" src="Outstation Taxi copy.png" />
+      <div class="col p-0 inner">
+      <img style="width:100%;" src="Outstation Taxi copy.png" />
       </div>
-      <div class="col inner">
-      <img style="width:110%;padding: 11px;" src="oNE WAY CABS copy.png" />
+      <div class="col p-0 inner">
+      <img style="width:100%;" src="oNE WAY CABS copy.png" />
       </div>
-      <div class="col inner">
-      <img style="width:110%;padding: 11px;" src="Carporate Car Rentals copy.png" />
+      <div class="col p-0 inner">
+      <img style="width:100%;" src="Carporate Car Rentals copy.png" />
       </div>
-      <div class="col inner">
-      <img style="width:110%;padding: 11px;" src="Airport Taxi copy.png" />
+      <div class="col p-0 inner">
+      <img style="width:100%;" src="Airport Taxi copy.png" />
       </div>
+      <div class="col-1"></div>
     </div>
     </div>
 </div>
@@ -534,14 +536,14 @@ then we will show you why travel by road is the new way of travel
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" style="height:440px;" src="https://www.meru.in/assets/images/happy.jpg" alt="First slide">
+      <img class="d-block w-100" style="height:440px;" src="b2b.png" alt="First slide">
       <center class="mb-5">
       <h3>12 million satisfied customers</h3>
       <p>	Serving millions of customers for more than 10 years.</p>
 </center>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" style="height:440px;" src="https://www.meru.in/assets/images/experts-hands-on-wheels.jpg" alt="Second slide">
+      <img class="d-block w-100" style="height:440px;" src="B2b.png" alt="Second slide">
       <center class="mb-5">
       <h3>Expert hands on wheel!</h3>
       <p>Professional drivers at your service.</p>
@@ -565,32 +567,6 @@ then we will show you why travel by road is the new way of travel
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-    
-    
-<div class="container">
-<div class="row m-0 justify-content-center">
-        <h2 style="border-bottom:2px solid white">SERVICES</h2>
-    </div>
-    <div class="row">
-      <div class="col">
-      <img style="width:140%;padding: 11px;" src="Local Car Rentals copy.png" />
-      </div>
-      <div class="col">
-      <img style="width:140%;padding: 11px;" src="Outstation Taxi copy.png" />
-      </div>
-      <div class="col">
-      <img style="width:140%;padding: 11px;" src="oNE WAY CABS copy.png" />
-      </div>
-      <div class="col">
-      <img style="width:140%;padding: 11px;" src="Carporate Car Rentals copy.png" />
-      </div>
-      <div class="col">
-      <img style="width:140%;padding: 11px;" src="Airport Taxi copy.png" />
-      </div>
-    </div>
-    </div>
     <div style="text-align: center" class="mb-5">
     <span class="blinking">Now travel begins by Calling AYWA !!!!</span>
     </div>
