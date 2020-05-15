@@ -70,7 +70,7 @@ echo $_POST['pick_up_at'];*/
     <link rel="stylesheet" href="style.css">
     <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title></title>
     
  </head>
@@ -80,9 +80,9 @@ echo $_POST['pick_up_at'];*/
       include 'header.php';
       ?>
    <div class="row m-0 data">
-  <div class="container pl-5">
+  <div class="container">
   <div class="row">
-  <div class="col-3">
+  <div class="col-4">
   
     <div class="mt-3">
         <span class="fw-600"><?php
@@ -114,17 +114,21 @@ echo $pieces[0];
         </div>
         </div>
     </div>
-    <div class="col-2 ml-auto"><a href="" class="btn btn-info " data-toggle="modal" data-target="#myModal">Modify </a></div>
   </div>  
 </div>
    </div>
 
 </div>
 
-<div class="container">
-    <img style="position:absolute;left: 0;width: 15%;height: 600px;" src="2_2.png">
-    <img style="position:absolute;right: 0;width: 15%;height: 600px;" src="1_1.png">
+<div class="">
+    
+    
 <div class="row m-0">
+    <div class="col-2">
+    <img style="width:inherit;" src="2_2.png">
+    </div>
+    <div class="col-8">
+        <div class="row">
     <?php
     $i=0;
 $sql =" SELECT * FROM vehicle";
@@ -200,9 +204,7 @@ $sql =" SELECT * FROM vehicle";
             </div>
             </div>
         </div>
-        <?php 
-      include 'footer.php';
-      ?>
+       
         <script>
        $("#menu<?php echo$i?>").hover(function(){
     $('.flyout<?php echo$i?>').show();
@@ -216,6 +218,16 @@ $("#menu_<?php echo$i?>").hover(function(){
 });
         </script>
     <?php } ?>
+    </div>
+    </div>
+    <div class="col-2">
+    <img style="width:inherit;" src="1_1.png">
+    </div>
+    <div>
+    <?php 
+      include 'footer.php';
+      ?>
+    </div>
         
     
  <div class="modal" id="myModal">
