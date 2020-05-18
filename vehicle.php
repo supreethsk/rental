@@ -72,7 +72,27 @@ echo $_POST['pick_up_at'];*/
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title></title>
-    
+    <style>
+        ul.social-icons li a {
+    display: inline-block;
+    margin: 0;
+    width: 24px;
+    height: 25px;
+    background-color: #999;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: all .17s ease-in-out;
+    -moz-transition: all .17s ease-in-out;
+    -webkit-transition: all .17s ease-in-out;
+    -o-transition: all .17s ease-in-out;
+}
+
+    </style>
+
  </head>
  <body>
  
@@ -155,7 +175,7 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0">
                     <div href="#" id="menu<?php echo $i?>" style="position:relative; color: #57a143;">Advance</div>
-                        <strong class="font-22"><span class="fas fa-inr">Rs.</span> 1026</strong><br>
+                        <strong class="font-22"><span class="fa fa-inr"></span> 1026</strong><br>
                         
                         <p class="flyout<?php echo $i?>" style="position:absolute;display:none;background-color: #ecf7e8;border: 1px solid #57a143;padding: 10px;z-index: 999999;border-radius: 5px;width:266%;"><span><strong class=" text-success">Advance :</strong><br>
                 If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
@@ -164,7 +184,7 @@ $sql =" SELECT * FROM vehicle";
                     <div class="col-6 p-0">
                     <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Total amount</div> 
                     
-                        <strong class="font-20 mr-2" ><span class="fa fa-inr">Rs.</span> <span><?php
+                        <strong class="font-20 mr-2" ><span class="fa fa-inr"></span> <span><?php
                     $number = $car_price;
                     $txt = sprintf(" %1\$.2f
                    <br>",$number);
@@ -185,7 +205,7 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0 mt-4">
                         <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
-                       Rs <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75 </strong><br>
+                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75 </strong><br>
                         
                         <strong>Per KM</strong>
                     </div>
@@ -222,102 +242,20 @@ $("#menu_<?php echo$i?>").hover(function(){
     </div>
     <div class="col-2">
     <img style="width:inherit;" src="1_1.png">
-    </div>
-    <div>
-    <?php 
+    </div>   
+          </div>
+          <div style="margin-top:10%;">
+          <?php 
       include 'footer.php';
       ?>
-    </div>
-        
-    
- <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-         
-            <!-- Modal Header -->
-            <div class="modal-header">
-
-                    <!-- <h4 class="modal-title look">Enter your  Details</h4> -->
-                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-           
-            <!-- Modal body -->
-            <div class="modal-body">
-                 
-
-            <div class="form_wrap">
-            <div class="row m-0 mb-3">
-                        <div class="col-4 p-0 text-center out" style="background-color: #fc983c !important;" id="outstation">
-                            <span>Outstation<span>
-                        </div>
-                        <div class="col-4 p-0 text-center out" id="local">
-                            <span>Local</span>
-                        </div>
-                        <div class="col-4 p-0 text-center out" id="airport">
-                            <span>Airport</span>
-                        </div>
-                    </div>
-            <form method="post" action="vehicle.php" class="outstation">
-                <h2 class="form_head mb-3">Make your trip</h2>
-                <div class="mb-2" style="display: flex;">
-                <div class="custom-control custom-radio  mr-2">
-                       
-                        <input type="radio" name="book" value="roundtrip" class="custom-control-input round" id="defaultChecked" name="defaultExampleRadios" checked>
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultChecked">Round trip</label>
-                        </div>
-
-                       
-
-                        <!-- Default checked -->
-                        <div class="custom-control custom-radio mr-2">
-                        <input type="radio" name="book" value="oneway" class="custom-control-input check" id="defaultUnchecked" name="defaultExampleRadios">
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked">One way</label>
-                        </div>
-                   
-                        <div class="custom-control custom-radio">
-                        <input type="radio" name="book" value="multidest"  class="custom-control-input mul" id="defaultUnchecked2" name="defaultExampleRadios">
-                        <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked2">Mul dest</label>
-                        </div>
-
-                        </div>
-                <div class="form-group">
-                    <label class="label form_label">Pick-up location</label>
-                    <input type="text" id="search_input"  name="from" class="form-control" placeholder="City, Airport, Station, etc">
-                </div>
-                <div class="form-group">
-                    <label class="label form_label">Drop-off location</label>
-                    <input type="text" name="to" class="form-control" placeholder="City, Airport, Station, etc">
-                </div>
-                <div class="d-flex">
-                <div class="form-group mr-2">
-                    <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" class="form-control dropchange" placeholder="Date" id="my_date_picker1">
-                </div>
-                <div class="form-group ml-2 drop">
-                    <label class="l});abel form_label ">DROP-OFF DATE</label>
-                    <input type="text" name="return" class="form-control" placeholder="Date" id="my_date_picker2">
-                </div>
-                </div>
-                <div>
-                <div class="form-group">
-                    <label class="label form_label">PICK-UP TIME</label>
-                    <input type="text" name="pick_up_at" class="form-control timepicker" placeholder="Time">
-                </div>
-                </div>
-                <div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary py-3 px-4" value="Search Vehicle">
-                </div>
-                </div>
-            </form>
-            <form class="local"></form>
-            <form class="airport"></form>
-            </div>
           </div>
+          
         </div>
+        
       </div>
+      
       <div>
-       
+      
         </div>
 
 

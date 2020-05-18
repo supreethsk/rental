@@ -6,17 +6,18 @@
     <title>Document</title>
     <style>
        .foot {
-   position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
    background-color: gray;
    color: white;
    text-align: center;
+   width: 100%;
 }
     </style>
 </head>
 <body>
+    <div class="row m-0">
 <div class="foot">
     <div class="container">
 <div class="row m-0 pt-2 pb-2">
@@ -51,6 +52,6 @@
     </div>
 <div class="LightGreyTxtColor text-center pt-2" style="background-color: darkgrey;">Copyright © AYWA Private Limited </div>
 </div>
-
+    </div>
 </body>
 </html>
