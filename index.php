@@ -215,7 +215,7 @@ ul.social-icons li a {
     <div class="overlay"></div>
     
     <div class="row m-0 ch_form" >
-        <div class="col-12 col-sm-3 col-lg-3 ml-5 p-0" style="z-index: 9;">
+        <div class="col-12 col-sm-3 col-lg-3 ml-5 p-0" style="z-index: 100;">
             <div class="form_wrap">
             <div class="row m-0 mb-3">
                         <div class="col-4 p-0 text-center out" style="background-color: #fc983c !important;" id="outstation">
@@ -230,7 +230,7 @@ ul.social-icons li a {
                     </div> 
             <form method="post" id="distance_form" action="vehicle.php" class="outstation">
                 <h2 class="form_head mb-3">Make your trip</h2>
-                <p name="demo" value="#demo" id="demo"></p>
+                <input name="demo" id="demo" type="hidden"></input>
                 <div class="mb-2" style="display: flex;">
                 <div class="custom-control custom-radio  mr-2">
                         
@@ -768,12 +768,20 @@ $(document).ready(function(){
                 var from_place = from_places.getPlace();
                 var from_address = from_place.formatted_address;
                 $('#origin').val(from_address);
+                if($('#destination').val() !== "")
+                {
+                  calculateDistance();
+                }
             });
 
             google.maps.event.addListener(to_places, 'place_changed', function () {
                 var to_place = to_places.getPlace();
                 var to_address = to_place.formatted_address;
                 $('#destination').val(to_address);
+                if($('#origin').val() !== "")
+                {
+                  calculateDistance();
+                }
             });
 
         });
@@ -826,15 +834,14 @@ $(document).ready(function(){
                     var res1 = res.replace(",", "");
                     var res2 = parseInt(res1);
                     var kilometers = res2 * 1.6;
-                    document.getElementById("demo").innerHTML = (kilometers.toFixed(0) + " Kilometers");
+                    $("#demo").val((kilometers.toFixed(0)));
                     console.log(kilometers)
                 }
             }
         }
         // print results on submit the form
         $('#distance_form').submit(function(e){
-            e.preventDefault();
-            calculateDistance();
+            // calculateDistance();
         });
 
     });

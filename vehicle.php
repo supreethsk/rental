@@ -132,7 +132,6 @@ echo $pieces[0];
         <div style="display: grid" class="mr-5 ml-5">
             <span class="fw-600">time</span>
             <span><?php echo $pick_up_at?></span>
-            <?php echo "<script>document.writeln($demo);</script>"?>
         </div>
         </div>
     </div>
@@ -187,10 +186,13 @@ $sql =" SELECT * FROM vehicle";
                     <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Total amount</div> 
                     
                         <strong class="font-20 mr-2" ><span class="fa fa-inr"></span> <span><?php
-                    $number = $car_price;
-                    $txt = sprintf(" %1\$.2f
-                   <br>",$number);
-                   echo $txt;
+                //     $number = $car_price;
+
+                //     $txt = sprintf(" %1\$.2f
+                //    <br>",$number);
+                //    echo $txt;
+                $tot = 9.75*$demo;
+                echo $tot;
                    ?></span></strong>
                         
                         <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
