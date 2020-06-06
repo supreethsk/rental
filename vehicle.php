@@ -40,6 +40,7 @@ $to=$_POST['to'];
 $pick_up=$_POST['pick_up'];
 $return=$_POST['return'];
 $pick_up_at=$_POST['pick_up_at'];
+$demo=$_POST['demo'];
 }
 elseif($_POST['book'] == "oneway"){
     $book=$_POST['book'];
@@ -131,6 +132,7 @@ echo $pieces[0];
         <div style="display: grid" class="mr-5 ml-5">
             <span class="fw-600">time</span>
             <span><?php echo $pick_up_at?></span>
+            <?php echo "<script>document.writeln($demo);</script>"?>
         </div>
         </div>
     </div>

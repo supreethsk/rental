@@ -14,7 +14,7 @@
     <link href= 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'> 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDI-vSjLZFp1EKPOf4yrA61Kvla82jtuQU"></script>
+    <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyB_vZvR6ARKJ1gIQbwwMkHDkflOQKs8XCE"  type="text/javascript"></script>
    <style>
 .container{
   text-align: center;
@@ -215,7 +215,7 @@ ul.social-icons li a {
     <div class="overlay"></div>
     
     <div class="row m-0 ch_form" >
-        <div class="col-12 col-sm-3 col-lg-3 ml-5 p-0" style="z-index: 9999999999999999;">
+        <div class="col-12 col-sm-3 col-lg-3 ml-5 p-0" style="z-index: 9;">
             <div class="form_wrap">
             <div class="row m-0 mb-3">
                         <div class="col-4 p-0 text-center out" style="background-color: #fc983c !important;" id="outstation">
@@ -228,8 +228,9 @@ ul.social-icons li a {
                             <span>Airport</span> 
                         </div>
                     </div> 
-            <form method="post" action="vehicle.php" class="outstation">
+            <form method="post" id="distance_form" action="vehicle.php" class="outstation">
                 <h2 class="form_head mb-3">Make your trip</h2>
+                <p name="demo" value="#demo" id="demo"></p>
                 <div class="mb-2" style="display: flex;">
                 <div class="custom-control custom-radio  mr-2">
                         
@@ -254,12 +255,14 @@ ul.social-icons li a {
                    <!-- one      -->
                 <div class="form-group">
                     <label class="label form_label">Pick-up location</label>
-                    <input type="text"  name="from" class="form-control" id="search_input" placeholder="City, Airport, Station, etc">
+                    <input type="text"  name="from" class="form-control" id="from_places" placeholder="City, Airport, Station, etc">
+                    <input id="origin" name="origin" required="" type="hidden" />
                 </div>
                 <div class="form-group b ">
                     <label class="label form_label">Drop-off location</label>
-                    <input type="text" name="to" class="form-control" id="search_input2" placeholder="City, Airport, Station, etc">
-                </div>
+                    <input type="text" name="to" class="form-control" id="to_places" placeholder="City, Airport, Station, etc">
+                    <input id="destination" name="destination" required="" type="hidden" />
+                  </div>
                 <div class="d-flex ">
                 <div class="form-group mr-2 ">
                     <label class="label form_label ">PICK-UP DATE</label>
@@ -755,66 +758,87 @@ $(document).ready(function(){
     });
     </script>
     <script>
+    $(function() {
+        // add input listeners
+        google.maps.event.addDomListener(window, 'load', function () {
+            var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
+            var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
 
-var searchInput = 'search_input';
+            google.maps.event.addListener(from_places, 'place_changed', function () {
+                var from_place = from_places.getPlace();
+                var from_address = from_place.formatted_address;
+                $('#origin').val(from_address);
+            });
 
-$(document).ready(function () {
-var autocomplete;
-autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
-types: ['geocode'],
-componentRestrictions: {
-    country: "IN"
-}
-});
+            google.maps.event.addListener(to_places, 'place_changed', function () {
+                var to_place = to_places.getPlace();
+                var to_address = to_place.formatted_address;
+                $('#destination').val(to_address);
+            });
 
-google.maps.event.addListener(autocomplete, 'place_changed', function () {
-    var near_place = autocomplete.getPlace();
-    document.getElementById('loc_lat').value = near_place.geometry.location.lat();
-    document.getElementById('loc_long').value = near_place.geometry.location.lng();
-    
-    document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
-    document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
-});
-});
+        });
+        // calculate distance
+        function calculateDistance() {
+            var origin = $('#origin').val();
+            var destination = $('#destination').val();
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+                {
+                    origins: [origin],
+                    destinations: [destination],
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.IMPERIAL, // miles and feet.
+                    // unitSystem: google.maps.UnitSystem.metric, // kilometers and meters.
+                    avoidHighways: false,
+                    avoidTolls: false
+                }, callback);
+        }
+        // get distance results
+        function callback(response, status) {
+            if (status != google.maps.DistanceMatrixStatus.OK) {
+                $('#result').html(err);
+            } else {
+                var origin = response.originAddresses[0];
+                var destination = response.destinationAddresses[0];
+                if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                    $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
+                } else {
+                    var distance = response.rows[0].elements[0].distance;
+                    var duration = response.rows[0].elements[0].duration;
+                    var miles = parseFloat(response.rows[0].elements[0].distance.text);
+                    var kilometers = miles * 1.6;
+                    console.log(kilometers + " Kilometers");
+                    console.log(miles + " miles");
+                    console.log(response.rows[0].elements[0].distance.text);
+                    var distance_in_kilo = distance.text / 1000; // the kilom
+                    var distance_in_mile = distance.value / 1609.34; // the mile
+                    var duration_text = duration.text;
+                    var duration_value = duration.value;
+                    $('#in_mile').text(distance_in_mile.toFixed(2));
+                    $('#in_kilo').text(kilometers.toFixed(2));
+                    $('#duration_text').text(duration_text);
+                    $('#duration_value').text(duration_value);
+                    $('#from').text(origin);
+                    $('#to').text(destination);
+                    $('#check').text(distance.text);
+                    var str = response.rows[0].elements[0].distance.text; 
+                    var res = str.replace("mi", " ");
+                    var res1 = res.replace(",", "");
+                    var res2 = parseInt(res1);
+                    var kilometers = res2 * 1.6;
+                    document.getElementById("demo").innerHTML = (kilometers.toFixed(0) + " Kilometers");
+                    console.log(kilometers)
+                }
+            }
+        }
+        // print results on submit the form
+        $('#distance_form').submit(function(e){
+            e.preventDefault();
+            calculateDistance();
+        });
 
-$(document).on('change', '#'+searchInput, function () {
-document.getElementById('latitude_input').value = '';
-document.getElementById('longitude_input').value = '';
+    });
 
-document.getElementById('latitude_view').innerHTML = '';
-document.getElementById('longitude_view').innerHTML = '';
-});
-</script>
-<script>
-
-var searchInput2 = 'search_input2';
-
-$(document).ready(function () {
-var autocomplete;
-autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput2)), {
-types: ['geocode'],
-componentRestrictions: {
-    country: "IN"
-}
-});
-
-google.maps.event.addListener(autocomplete, 'place_changed', function () {
-    var near_place = autocomplete.getPlace();
-    document.getElementById('loc_lat').value = near_place.geometry.location.lat();
-    document.getElementById('loc_long').value = near_place.geometry.location.lng();
-    
-    document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
-    document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
-});
-});
-
-$(document).on('change', '#'+searchInput2, function () {
-document.getElementById('latitude_input').value = '';
-document.getElementById('longitude_input').value = '';
-
-document.getElementById('latitude_view').innerHTML = '';
-document.getElementById('longitude_view').innerHTML = '';
-});
 </script>
 </body>
 </html>
