@@ -192,13 +192,22 @@ $sql =" SELECT * FROM vehicle";
                 //     $txt = sprintf(" %1\$.2f
                 //    <br>",$number);
                 //    echo $txt;
+                $str1 = substr($pick_up, 3);
+                $string = (int)substr($str1, 0, -5);
+                
+                $str2 = substr($return, 3);
+                $string1 = (int)substr($str2, 0, -5);
+
+                $da = ($string1-$string);
+
                 $totdist = 2*$demo; 
+                echo $demo;
                 if($totdist <= 275){
                     $tot = $car_price*275;
                     echo $tot;      
                 }
                 else{
-                $tot = 2*$car_price*$demo;
+                $tot = (2*$car_price*$demo)+($da*300);
                 echo $tot;
                 }
                 //calculate min
