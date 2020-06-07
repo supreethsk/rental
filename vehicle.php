@@ -199,12 +199,11 @@ $sql =" SELECT * FROM vehicle";
                 $string1 = (int)substr($str2, 0, -5);
 
                 $da = ($string1-$string);
-
+              //echo $da*300
                 $totdist = 2*$demo; 
-                echo $demo;
                 if($totdist <= 275){
                     $tot = $car_price*275;
-                    echo $tot;      
+                    echo ($tot) + ($da*300);  
                 }
                 else{
                 $tot = (2*$car_price*$demo)+($da*300);
