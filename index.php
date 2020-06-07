@@ -295,12 +295,12 @@ ul.social-icons li a {
                 </div>
             </form>
            <!--  booking local trip -->
-            <form method="post" action="localvehicle.php" class="local" style="display: none">
+            <form method="post" id="distance_form" action="localvehicle.php" class="local" style="display: none">
                 <h2 class="form_head mb-3">Make your trip</h2>
-               
                 <div class="form-group">
                     <label class="label form_label">Pick-up location</label>
-                    <input type="text"  name="from" class="form-control" id="search_input1" placeholder="City, Airport, Station, etc">
+                   <input type="text"  name="from" class="form-control" id="from_places1" placeholder="City, Airport, Station, etc">
+                    <input id="origin1" name="origin1" required="" type="hidden" />
                 </div>
                 
                 <div class="form-group mr-2">
@@ -762,6 +762,7 @@ $(document).ready(function(){
         // add input listeners
         google.maps.event.addDomListener(window, 'load', function () {
             var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
+            var from_places1 = new google.maps.places.Autocomplete(document.getElementById('from_places1'));
             var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
 
             google.maps.event.addListener(from_places, 'place_changed', function () {
@@ -769,6 +770,15 @@ $(document).ready(function(){
                 var from_address = from_place.formatted_address;
                 $('#origin').val(from_address);
                 if($('#destination').val() !== "")
+                {
+                  calculateDistance();
+                }
+            });
+            google.maps.event.addListener(from_places1, 'place_changed', function () {
+                var from_place1 = from_places.getPlace();
+                var from_address1 = from_place.formatted_address;
+                $('#origin1').val(from_address1);
+                if($('#destination1').val() !== "")
                 {
                   calculateDistance();
                 }
@@ -838,6 +848,7 @@ $(document).ready(function(){
                     console.log(kilometers)
                 }
             }
+
         }
         // print results on submit the form
         $('#distance_form').submit(function(e){

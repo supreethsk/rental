@@ -191,8 +191,16 @@ $sql =" SELECT * FROM vehicle";
                 //     $txt = sprintf(" %1\$.2f
                 //    <br>",$number);
                 //    echo $txt;
-                $tot = 9.75*$demo;
+                $totdist = 2*$demo; 
+                if($totdist <= 275){
+                    $tot = 9.75*275;
+                    echo $tot;      
+                }
+                else{
+                $tot = 2*9.75*$demo;
                 echo $tot;
+                }
+                //calculate min
                    ?></span></strong>
                         
                         <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
