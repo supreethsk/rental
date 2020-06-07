@@ -299,7 +299,7 @@ ul.social-icons li a {
                 <h2 class="form_head mb-3">Make your trip</h2>
                 <div class="form-group">
                     <label class="label form_label">Pick-up location</label>
-                   <input type="text"  name="from" class="form-control" id="from_places1" placeholder="City, Airport, Station, etc">
+                   <input type="text" autocomplete="off"  name="from" class="form-control" id="from_places1" placeholder="City, Airport, Station, etc">
                     <input id="origin1" name="origin1" required="" type="hidden" />
                 </div>
                 

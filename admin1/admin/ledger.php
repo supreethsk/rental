@@ -153,7 +153,6 @@ session_start();
                 </div>
               </li>
             </ul>
-          </li>
       </div> 
 
 

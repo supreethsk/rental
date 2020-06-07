@@ -49,6 +49,7 @@ elseif($_POST['book'] == "oneway"){
     $pick_up=$_POST['pick_up'];
     $return=$_POST['return'];
     $pick_up_at=$_POST['pick_up_at'];
+    $demo=$_POST['demo'];
     }
 
 /*echo $_POST['book'];
@@ -167,7 +168,7 @@ $sql =" SELECT * FROM vehicle";
     <div class="col-6 p-0">
         <div class="row m-0 mt-4 p-3 ml-2 mr-2" style="border:1px solid black; border-radius:5px;">
             <div class="col-sm-5">
-                <img src="<?php echo $car_image; ?>" class="img-fluid " style="margin-bottom:12px " alt="Tata Indigo">
+                <img src="<?php echo $car_image; ?>" class="img-fluid " style="margin-bottom:12px;height: 80px;width: 200px;" alt="Tata Indigo">
                 <span class="text-primary text-uppercase font-weight-bold pt-3"><?php echo $car_name; ?></span><br>
                 <span class=" font-13">Sedan | AC | 4 Seats</span>
     
@@ -193,11 +194,11 @@ $sql =" SELECT * FROM vehicle";
                 //    echo $txt;
                 $totdist = 2*$demo; 
                 if($totdist <= 275){
-                    $tot = 9.75*275;
+                    $tot = $car_price*275;
                     echo $tot;      
                 }
                 else{
-                $tot = 2*9.75*$demo;
+                $tot = 2*$car_price*$demo;
                 echo $tot;
                 }
                 //calculate min
@@ -217,7 +218,13 @@ $sql =" SELECT * FROM vehicle";
                 <div class="row m-0">
                     <div class="col-sm-6 p-0 mt-4">
                         <strong class="font-16 text-danger mr-2" style="display:none;"> <span class="fa fa-inr"></span> <del>9.25</del></strong>
-                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span> 9.75 </strong><br>
+                        <strong class="font-16 text-primary"><span class="fa fa-inr"></span><?php 
+                         if  ($car_price==9)
+                         {
+                           echo $car_price+0.75;
+                         }else {
+                             echo $car_price;
+                         } ?> </strong><br>
                         
                         <strong>Per KM</strong>
                     </div>
