@@ -6,7 +6,8 @@ $to=$_GET['to'];
 $pick_up=$_GET['pick_up'];
 $return=$_GET['return'];
 $pick_up_at=$_GET['pick_up_at'];
-$book=$_GET['book']; 
+$book=$_GET['book'];
+$total=$_GET['tot']; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,9 +72,9 @@ $book=$_GET['book'];
   <?php 
   /*echo $vehicle_price; */
          
-    $gst_amt=$vehicle_price-($vehicle_price*100/(100+5));
+    $gst_amt=$total-($total*100/(100+5));
    /* echo $gst_amt;*/
-    $payble_amt=$vehicle_price+$gst_amt;
+    $payble_amt=$total+$gst_amt;
     /*echo "\nx"*/  
     /*echo $payble_amt;*/
   ?>
@@ -133,7 +134,7 @@ $book=$_GET['book'];
         </div>
         
         <div class="custom-control custom-radio">
-                    <input type="radio" name="payment_type" value="<?php echo $vehicle_price; ?>"  class="custom-control-input mul" id="defaultUnchecked3" name="defaultExampleRadios">
+                    <input type="radio" name="payment_type" value="<?php echo $total; ?>"  class="custom-control-input mul" id="defaultUnchecked3" name="defaultExampleRadios">
                     <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked3">Pay With Bank Reward Points</label>
                     </div>
                     <div class="custom-control custom-radio">
@@ -182,14 +183,51 @@ $book=$_GET['book'];
   </div>
   <div class="row m-0">
     <div class="col-4"><label class="label form_label">Total Fare :</label></div>
-    <div class="col-8"><span class="ml-3 mr-2"><?php echo $vehicle_price; ?></span><i class="fa fa-check-circle check"></i></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo $total;?></span><i class="fa fa-check-circle check"></i></div>
   </div>
   </div>
   </div>
 </div>
   </div>
   <div class="col-2" style="margin-top:6%;"><img style="width:inherit;" src="7_7.png"></div>
+
+
+   <div class="col-6"></div>
+  <div class="col-4" style="padding-bottom: 100px;">
+  <div class="form_wrap">
+  <h2 class="form_head mb-3 text-center">Total Fare</h2>
+  <div class="row m-0">
+    <div class="col-4"><label class="label form_label">Base Fare :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo $total?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+  <div class="row m-0">
+    <div class="col-4"><label class="label form_label">SGST :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo "2.5%"; ?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+   <div class="row m-0">
+    <div class="col-4"><label class="label form_label">IGST:</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo "2.5%"; ?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+  <div class="row m-0">
+    <div class="col-4"><label class="label form_label">Grand Total :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo round($payble_amt);?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+<!--   <div class="row m-0">
+    <div class="col-4"><label class="label form_label">Pick up time :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo $pick_up_at; ?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+  <div class="row m-0">
+    <div class="col-4"><label class="label form_label">Car Type :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo $vehicle_name; ?></span><i class="fa fa-check-circle check"></i></div>
+  </div>
+  <div class="row m-0">
+    <div class="col-4"><label class="label form_label">Total Fare :</label></div>
+    <div class="col-8"><span class="ml-3 mr-2"><?php echo $total;?></span><i class="fa fa-check-circle check"></i></div>
+  </div> -->
+  </div>
+  </div>
 </div>
+  
 
 
 		<script>

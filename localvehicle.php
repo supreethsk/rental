@@ -6,9 +6,7 @@ $from=$_POST['from'];
    $book=$_POST['book'];
     $pick_up_at=$_POST['pick_up_at'];
     $demo=$_POST['demo'];
-   
-
-?>
+   ?>
 
  <!DOCTYPE html>
  <html>
@@ -179,6 +177,7 @@ $sql =" SELECT * FROM vehicle";
                                    
                                     &pick_up_at=<?php echo $pick_up_at;?>
                                     &book=<?php echo $book;?>
+                                    &tot=<?php echo $tot;?>
                                     ">   
                                     <button class="buttonselect">BOOK NOW</button> </a>
                     </div>

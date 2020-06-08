@@ -244,6 +244,7 @@ $sql =" SELECT * FROM vehicle";
                                     &return=<?php echo $return;?>
                                     &pick_up_at=<?php echo $pick_up_at;?>
                                     &book=<?php echo $book;?>
+                                    &tot=<?php echo $tot;?>
                                     ">   
                                     <button class="buttonselect">BOOK NOW</button> </a>
                     </div>
