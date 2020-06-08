@@ -213,11 +213,11 @@ $sql =" SELECT * FROM vehicle";
                    ?></span></strong>
                         
                         <p class="flyout_<?php echo $i?>" style="position:absolute;display:none;background-color: #f9e9e9;border: 1px solid #ec2020;padding: 10px;z-index: 999999;border-radius: 5px;min-width:292%;left: -306px;"><strong class="text-red">Fare Breakup :</strong><br />
-                        Approx. Roundtrip distance : 280 Kms.<br />
-                        Minimum charged distance :  &nbsp225 Kms / Day <br />
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>=   Rs. 4387.5 /-</span>           
-                        <span>Estimated Km charged :</span> <span> &nbsp450 Km X 9.75 Rs/Km</span> <span>= Rs. 4387.5 /-</span>
+                        Approx. Roundtrip distance :<?php echo $demo?> Kms.<br />
+                        Minimum charged distance :  &nbsp275 Kms / Day <br />
+                        <span>Estimated Km charged :</span> <span> &nbsp<?php echo 2*$demo?> Km X <?php echo $car_price?> Rs/Km</span> <span>=<?php echo 2*$car_price*$demo?>  /-</span><br> 
+                        <span>Extra Km if any :</span> <span> &nbsp 0 Km X <?php echo $car_price?> Rs/Km</span> <span>=   Rs. 0 /-</span>   <br>        
+                        <span>Driver allowances is 300 /day:</span> <span> <?php echo $da?> Rs/Km</span> <span>= Rs. <?php echo $da*300?>  /-</span><br>
                         <br />   <em><b class='blue'>Extra Charges :</b> </em> <b>If you will use car/cab more than 450 Kms , extra charges as follows: </b><br />  After  <del class='text-danger' style='display:none;'>500</del>&nbsp450  Kms :<br />+   <label class='WebRupee'>Rs</label>&nbsp;<del class='text-danger' style='display:none;'>9.25</del>&nbsp9.75 per km charges<br /> <br /> <em><b class='blue'>CCR Transparency :</b> </em>1. One day means one calendar day (12 midnight to 12 midnight).<br />2. Kilometers and Hours will be calculated from garage to garage.<br />3. Toll, Parking, State Border Charges etc. not include in the above cost, you have to pay extra as applicable. <br />4.AC will be switched off in hilly areas.<br>5.Driver would take care of his food and stay. <br>Note: If driver drive vehicle between 09:00 PM to 06:00 AM, Night charges Rs.250/- will be applicable.</span></a>
   
                     </p>
