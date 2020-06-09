@@ -216,7 +216,7 @@ $sql =" SELECT * FROM vehicle";
                 $tot = (2*$car_price*275)+(300);
                 echo $tot;
                 }
-            }
+            
                 //calculate min
                    ?></span></strong>
                         
