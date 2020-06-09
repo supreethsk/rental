@@ -192,6 +192,7 @@ $sql =" SELECT * FROM vehicle";
                 //     $txt = sprintf(" %1\$.2f
                 //    <br>",$number);
                 //    echo $txt;
+              if($book == "roundtrip"){
                 $str1 = substr($pick_up, 3);
                 $string = (int)substr($str1, 0, -5);
                 
@@ -201,7 +202,8 @@ $sql =" SELECT * FROM vehicle";
                 $da = ($string1-$string);
               //echo $da*300
                 $totdist = 2*$demo; 
-                if($totdist <= 275){
+                $min_dist = 275*$da; 
+                if($totdist <= $min_dist){
                     $tot = $car_price*275;
                     echo ($tot) + ($da*300);  
                 }
@@ -209,6 +211,12 @@ $sql =" SELECT * FROM vehicle";
                 $tot = (2*$car_price*$demo)+($da*300);
                 echo $tot;
                 }
+            }
+            else{
+                $tot = (2*$car_price*275)+(300);
+                echo $tot;
+                }
+            }
                 //calculate min
                    ?></span></strong>
                         
