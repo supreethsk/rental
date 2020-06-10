@@ -93,6 +93,11 @@ echo $_POST['pick_up_at'];*/
     -o-transition: all .17s ease-in-out;
 }
 
+@media screen and (max-width: 480px) {
+  .car_detail {
+    display: none;
+  }
+}
     </style>
 
  </head>
@@ -146,10 +151,10 @@ echo $pieces[0];
     
     
 <div class="row m-0">
-    <div class="col-2">
+    <div class="col-2 car_detail">
     <img style="width:inherit;" src="2_2.png">
     </div>
-    <div class="col-8">
+    <div class="col-12 col-sm-8 col-lg-8">
         <div class="row">
     <?php
     $i=0;
@@ -165,7 +170,7 @@ $sql =" SELECT * FROM vehicle";
     $i++;
     
     ?>
-    <div class="col-6 p-0">
+    <div class="col-12 col-sm-6 col-lg-6 p-0">
         <div class="row m-0 mt-4 p-3 ml-2 mr-2" style="border:1px solid black; border-radius:5px;">
             <div class="col-sm-5">
                 <img src="<?php echo $car_image; ?>" class="img-fluid " style="margin-bottom:12px;height: 80px;width: 200px;" alt="Tata Indigo">
@@ -216,7 +221,7 @@ $sql =" SELECT * FROM vehicle";
                 $tot = (2*$car_price*275)+(300);
                 echo $tot;
                 }
-            }
+            
                 //calculate min
                    ?></span></strong>
                         
@@ -276,7 +281,7 @@ $("#menu_<?php echo$i?>").hover(function(){
     <?php } ?>
     </div>
     </div>
-    <div class="col-2">
+    <div class="col-2 car_detail">
     <img style="width:inherit;" src="1_1.png">
     </div>   
           </div>

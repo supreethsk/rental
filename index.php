@@ -159,6 +159,11 @@ ul.social-icons li a {
     flex-direction: column;
   }
 }
+@media screen and (min-width: 480px) {
+  .main_form {
+    margin-left: 4%;
+  }
+}
 
    </style> 
 </head>
@@ -215,7 +220,7 @@ ul.social-icons li a {
     <div class="overlay"></div>
     
     <div class="row m-0 ch_form" >
-        <div class="col-12 col-sm-3 col-lg-3 ml-5 p-0" style="z-index: 100;">
+        <div class="col-12 col-sm-3 col-lg-3 main_form p-0" style="z-index: 100;">
             <div class="form_wrap">
             <div class="row m-0 mb-3">
                         <div class="col-4 p-0 text-center out" style="background-color: #fc983c !important;" id="outstation">
@@ -247,7 +252,7 @@ ul.social-icons li a {
                         </div>
                     
                         <div class="custom-control custom-radio">
-                        <input type="radio" name="book" value="multiple"  class="custom-control-input mul" id="defaultUnchecked2" name="defaultExampleRadios">
+                        <input type="radio" name="book" value="multiple"  class="custom-control-input mul" id="defaultUnchecked2" name="defaultExampleRadios" disabled>
                         <label class="custom-control-label form_label" style="padding-top: 3px" for="defaultUnchecked2">Mul dest</label>
                         </div>
 
