@@ -39,7 +39,11 @@ $total=$_GET['tot'];
     -webkit-transition: all .17s ease-in-out;
     -o-transition: all .17s ease-in-out;
 }
-
+@media screen and (max-width: 480px) {
+  .car_detail {
+    display: none;
+  }
+}
     </style>
 
 </head>
@@ -49,10 +53,10 @@ $total=$_GET['tot'];
       include 'header.php';
       ?>
 <div class="row m-0">
-  <div class="col-2" style="margin-top:6%;">
+  <div class="col-2 car_detail" style="margin-top:6%;">
   <img style="width:inherit;" src="5_5.png">
   </div>
-  <div class="col-8">
+  <div class="col-12 col-sm-8 col-lg-8">
   <?php
     $sql =" SELECT * FROM vehicle where vehicle_id='$id'";
  
@@ -67,7 +71,7 @@ $total=$_GET['tot'];
  ?>
   <div class="row m-0 mt-40">
 
-<div class="col-5 p-0">
+<div class="col-12 col-sm-5 col-lg-5 p-0">
 <div class="form_wrap">
   <?php 
   /*echo $vehicle_price; */
@@ -189,7 +193,7 @@ $total=$_GET['tot'];
   </div>
 </div>
   </div>
-  <div class="col-2" style="margin-top:6%;"><img style="width:inherit;" src="7_7.png"></div>
+  <div class="col-2 car_detail" style="margin-top:6%;"><img style="width:inherit;" src="7_7.png"></div>
 
 
    <div class="col-6"></div>

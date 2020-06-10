@@ -14,11 +14,23 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDI-vSjLZFp1EKPOf4yrA61Kvla82jtuQU"></script>
-</head>
+<style>
+  @media screen and (max-width: 480px) {
+  .head_nav {
+    width: 79px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .head_nav {
+    width: 144px;
+  }
+}
+  </style>
+  </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navi2">
         <div class="container">
-        <a class="navbar-brand" href="#"><img style="width: 144px;" class="logo" src="logo.png" alt="logo"></a>
+        <a class="navbar-brand " href="#"><img style="" class="logo head_nav" src="logo.png" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
