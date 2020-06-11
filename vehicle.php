@@ -188,7 +188,7 @@ $sql =" SELECT * FROM vehicle";
                 If basic amount is greater than Rs. 1000 for a day, at that time advance amount will be Rs. 1000/day otherwise advance amount will be basic amount per day. 
 </span></p>
                     </div>
-                    <div class="col-6 p-0">
+                    <div class="col-12 col-sm-6 col-lg-6 p-0">
                     <div id="menu_<?php echo $i?>" style="position:relative;color: #ec2020">Total amount</div> 
                     
                         <strong class="font-20 mr-2" ><span class="fa fa-inr"></span> <span><?php
