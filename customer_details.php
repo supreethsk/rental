@@ -162,7 +162,7 @@ $total=$_GET['tot'];
   </div>
   </div>
   <div class="col-1"></div>
-  <div class="col-6">
+  <div class="col-12 col-sm-6 col-lg-6">
   <div class="form_wrap">
   <h2 class="form_head mb-3 text-center">Your Booking Details</h2>
   <div class="row m-0">
@@ -197,7 +197,7 @@ $total=$_GET['tot'];
 
 
    <div class="col-6"></div>
-  <div class="col-4" style="padding-bottom: 100px;">
+  <div class="col-12 col-sm-4 col-lg-4" style="padding-bottom: 100px;">
   <div class="form_wrap">
   <h2 class="form_head mb-3 text-center">Total Fare</h2>
   <div class="row m-0">
