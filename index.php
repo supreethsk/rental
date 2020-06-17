@@ -260,28 +260,28 @@ ul.social-icons li a {
                    <!-- one      -->
                 <div class="form-group">
                     <label class="label form_label">Pick-up location</label>
-                    <input type="text"  name="from" class="form-control" id="from_places" placeholder="City, Airport, Station, etc">
+                    <input type="text"  name="from" class="form-control" id="from_places" placeholder="City, Airport, Station, etc" required>
                     <input id="origin" name="origin" required="" type="hidden" />
                 </div>
                 <div class="form-group b ">
                     <label class="label form_label">Drop-off location</label>
-                    <input type="text" name="to" class="form-control" id="to_places" placeholder="City, Airport, Station, etc">
+                    <input type="text" name="to" class="form-control" id="to_places" placeholder="City, Airport, Station, etc" required>
                     <input id="destination" name="destination" required="" type="hidden" />
                   </div>
                 <div class="d-flex ">
                 <div class="form-group mr-2 ">
                     <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker1">
+                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker1" required>
                 </div>
                 <div class="form-group ml-2  drop">
                     <label class="label form_label ">DROP-OFF DATE</label>
-                    <input type="text" name="return" autocomplete="off" class="form-control" placeholder="Date" id="my_date_picker2">
+                    <input type="text" name="return" autocomplete="off" class="form-control" placeholder="Date" id="my_date_picker2" >
                 </div>
                 </div>
                 <div>
                 <div class="form-group ">
                     <label class="label form_label">PICK-UP TIME</label>
-                    <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
+                    <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time" required>
                 </div>
                 </div>
 <!-- one -->
@@ -304,18 +304,18 @@ ul.social-icons li a {
                 <h2 class="form_head mb-3">Make your trip</h2>
                 <div class="form-group">
                     <label class="label form_label">Pick-up location</label>
-                   <input type="text" autocomplete="off"  name="from" class="form-control" id="from_places1" placeholder="City, Airport, Station, etc">
+                   <input type="text" autocomplete="off"  name="from" class="form-control" id="from_places1" placeholder="City, Airport, Station, etc" required>
                     <input id="origin1" name="origin1" required="" type="hidden" />
                 </div>
                 
                 <div class="form-group mr-2">
                     <label class="label form_label ">PICK-UP DATE</label>
-                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker4">
+                    <input type="text" name="pick_up" autocomplete="off" class="form-control dropchange" placeholder="Date" id="my_date_picker4" required>
                 </div>
                 <div>
                 <div class="form-group">
                     <label class="label form_label">PICK-UP TIME</label>
-                    <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time">
+                    <input type="text" autocomplete="off" name="pick_up_at" class="form-control timepicker" placeholder="Time" required>
                 </div>
                 <div class="form-group">
                    
@@ -743,7 +743,7 @@ $(document).ready(function(){
       $(".check").click(function(){
         $(".b").css("display","block");
        $(".drop").css("display","none");
-       $(".dropchange").css("width",'127%');
+       $(".dropchange").css("width",'100%');
        $(".show").css("display","none");
       });
       $(".round").click(function(){
