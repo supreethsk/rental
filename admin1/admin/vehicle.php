@@ -180,23 +180,22 @@ session_start();
     for ($i = 1; $i <=count($vehicle_id); $i++)
     {
     // Show entries
-        echo    
-            "
+        ?>
             <tbody>
             <tr>
-            <td>$vehicle_id[$i]</td>
-            <td>$vehicle_name[$i]</td>
-            <td>$vehicle_satus[$i]</td>
-            <td>$vehicle_price[$i]</td>
-            <td>$registercity[$i]</td>
-             <td><img src='img/$vehicle_image[$i]'height=10% width=100%></img></td>
+            <td><?php echo $vehicle_id[$i];?></td>
+            <td><?php echo $vehicle_name[$i];?></td>
+            <td><?php echo $vehicle_satus[$i];?></td>
+            <td><?php echo $vehicle_price[$i];?></td>
+            <td> <?php echo $registercity[$i];?></td>
+             <td><img src='<?php echo $vehicle_image[$i];?> 'height=5% width=100%></img></td>
              <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal_$i'>modify</button>
             
             <a class='btn btn-primary ' href='delete.php?id=$vehicle_id[$i];'>delete</a></td>
             </tr>
-            </tbody>";
+            </tbody>
         
- echo "<div class='modal' id='myModal_$i'>
+ <div class='modal' id='myModal_$i'>
     <div class='modal-dialog'>
       <div class='modal-content'>
         <div class='modal-header'>
@@ -241,10 +240,10 @@ session_start();
             </form>
           </div>
         </div>
-      </div>";
-      /* modal for delete*/
+      </div>
+     
    
-        }
+       <?php }
    
     echo "</table>";
  ?>

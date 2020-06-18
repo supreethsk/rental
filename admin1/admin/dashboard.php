@@ -183,7 +183,7 @@ session_start();
          $amt_paid[$i]=$row2['amount_paid'];
          $email[$i]=$row2['cutomer_email'];
          $i++;
-         echo $i;
+         
     }  
 
     function delete() {
@@ -268,7 +268,7 @@ session_start();
             <!-- Modal body -->
             <center>
                   <div class='modal-body'>
-                  <h3><?php echo $booking_id[$i];?></h3>
+                  <h3><!-- <?php echo $booking_id[$i];?> --></h3>
                     <form action='search.php' method='post'>
                           
                           
